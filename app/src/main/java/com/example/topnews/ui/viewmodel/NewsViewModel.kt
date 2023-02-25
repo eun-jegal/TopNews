@@ -12,6 +12,6 @@ class NewsViewModel(
     private val saveArticleUseCase: SaveArticleUseCase,
     private val deleteArticleUseCase: DeleteArticleUseCase,
     private val getAllArticlesUseCase: GetAllArticlesUseCase,
-    private val deleteAllArticlesUseCase: GetAllArticlesUseCase
+    private val deleteAllArticlesUseCase: DeleteAllArticlesUseCase
 ) : AndroidViewModel(app) {
 }

@@ -13,7 +13,7 @@ class NewsViewModelFactory(
     private val saveArticleUseCase: SaveArticleUseCase,
     private val deleteArticleUseCase: DeleteArticleUseCase,
     private val getAllArticlesUseCase: GetAllArticlesUseCase,
-    private val deleteAllArticlesUseCase: GetAllArticlesUseCase
+    private val deleteAllArticlesUseCase: DeleteAllArticlesUseCase
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return NewsViewModel(
