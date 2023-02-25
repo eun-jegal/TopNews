@@ -1,5 +1,6 @@
 package com.example.topnews.ui.di
 
+import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.example.topnews.data.db.ArticleDAO
@@ -17,7 +18,7 @@ class DatabaseModule {
         return Room.databaseBuilder(
             context,
             ArticleDatabase::class.java,
-            "topnewsclient"
+            "topnews_db"
         ).build()
     }
 

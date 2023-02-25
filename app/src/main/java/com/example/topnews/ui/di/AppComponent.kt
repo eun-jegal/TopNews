@@ -1,5 +1,6 @@
 package com.example.topnews.ui.di
 
+import com.example.topnews.ui.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 
@@ -17,4 +18,5 @@ import javax.inject.Singleton
     ]
 )
 interface AppComponent {
+    fun inject(mainActivity: MainActivity)
 }

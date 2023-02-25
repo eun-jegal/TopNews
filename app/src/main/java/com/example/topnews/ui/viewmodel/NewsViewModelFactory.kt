@@ -1,12 +1,11 @@
 package com.example.topnews.ui.viewmodel
 
-import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.topnews.domain.*
+import javax.inject.Inject
 
-class NewsViewModelFactory(
-    private val app: Application,
+class NewsViewModelFactory @Inject constructor(
     private val getTopHeadlinesUseCase: GetTopHeadlinesUseCase,
     private val getHeadlinesByCategoryUseCase: GetHeadlinesByCategoryUseCase,
     private val getSearchedHeadlinesUseCase: GetSearchedHeadlinesUseCase,
@@ -17,7 +16,6 @@ class NewsViewModelFactory(
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return NewsViewModel(
-            app,
             getTopHeadlinesUseCase,
             getHeadlinesByCategoryUseCase,
             getSearchedHeadlinesUseCase,

@@ -13,7 +13,6 @@ class FactoryModule {
     @Singleton
     @Provides
     fun provideViewModelFactory(
-        app: Application,
         getTopHeadlinesUseCase: GetTopHeadlinesUseCase,
         getHeadlinesByCategoryUseCase: GetHeadlinesByCategoryUseCase,
         getSearchedHeadlinesUseCase: GetSearchedHeadlinesUseCase,
@@ -23,7 +22,6 @@ class FactoryModule {
         deleteAllArticlesUseCase: DeleteAllArticlesUseCase
     ): NewsViewModelFactory {
         return NewsViewModelFactory(
-            app,
             getTopHeadlinesUseCase,
             getHeadlinesByCategoryUseCase,
             getSearchedHeadlinesUseCase,
