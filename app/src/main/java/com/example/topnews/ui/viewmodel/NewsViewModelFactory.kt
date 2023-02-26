@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.topnews.domain.*
 import javax.inject.Inject
 
-class NewsViewModelFactory @Inject constructor(
+class NewsViewModelFactory(
     private val getTopHeadlinesUseCase: GetTopHeadlinesUseCase,
     private val getHeadlinesByCategoryUseCase: GetHeadlinesByCategoryUseCase,
     private val getSearchedHeadlinesUseCase: GetSearchedHeadlinesUseCase,

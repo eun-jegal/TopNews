@@ -7,16 +7,19 @@ import com.example.topnews.data.db.ArticleDAO
 import com.example.topnews.data.db.ArticleDatabase
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
+@InstallIn(SingletonComponent::class)
 class DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideArticleDatabase(context: Context): ArticleDatabase {
+    fun provideArticleDatabase(app: Application): ArticleDatabase {
         return Room.databaseBuilder(
-            context,
+            app,
             ArticleDatabase::class.java,
             "topnews_db"
         ).build()

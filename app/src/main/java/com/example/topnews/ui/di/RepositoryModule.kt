@@ -6,9 +6,12 @@ import com.example.topnews.data.repository.NewsRepository
 import com.example.topnews.data.repository.NewsRepositoryImpl
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
+@InstallIn(SingletonComponent::class)
 class RepositoryModule {
 
     @Singleton
