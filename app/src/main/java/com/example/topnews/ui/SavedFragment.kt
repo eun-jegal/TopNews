@@ -38,9 +38,24 @@ class SavedFragment : Fragment() {
         viewModel = (activity as MainActivity).viewModel
         newsAdapter = (activity as MainActivity).newsAdapter
 
+        initActionBar()
         initRecyclerView()
         displaySavedArticles()
         setItemTouchHelper(view)
+    }
+
+    private fun initActionBar() {
+        binding.toolbar.apply {
+            inflateMenu(R.menu.saved_fragement_toolbar_menu)
+            setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.action_delete_all -> {
+                        viewModel.deleteAllArticles()
+                        true
+                    } else -> false
+                }
+            }
+        }
     }
 
     private fun initRecyclerView() {
