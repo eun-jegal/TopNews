@@ -9,7 +9,13 @@ import com.bumptech.glide.Glide
 import com.example.topnews.data.model.Article
 import com.example.topnews.databinding.ListItemBinding
 
-class NewsAdapter() : RecyclerView.Adapter<NewsViewHolder>() {
+class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+
+    private var onItemClickListener: ((Article) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: (Article) -> Unit) {
+        onItemClickListener = listener
+    }
 
     private val callback = object : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
@@ -37,21 +43,27 @@ class NewsAdapter() : RecyclerView.Adapter<NewsViewHolder>() {
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
-}
 
-class NewsViewHolder(
-    private val binding: ListItemBinding
-) : RecyclerView.ViewHolder(binding.root) {
+    inner class NewsViewHolder(
+        private val binding: ListItemBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(article: Article) {
-        binding.apply {
-            title.text = article.title
-            description.text = article.description
-            source.text = "${article.source.name} · ${article.publishedAt}"
+        fun bind(article: Article) {
+            binding.apply {
+                title.text = article.title
+                description.text = article.description
+                source.text = article.source?.name
+                publishedAt.text = article.publishedAt
+            }
+            Glide.with(binding.thumbnail.context)
+                .load(article.urlToImage)
+                .into(binding.thumbnail)
+
+            binding.root.setOnClickListener {
+                onItemClickListener?.let {
+                    it(article)
+                }
+            }
         }
-        Glide.with(binding.thumbnail.context)
-            .load(article.urlToImage)
-            .into(binding.thumbnail)
     }
-
 }

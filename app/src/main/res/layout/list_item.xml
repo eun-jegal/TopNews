@@ -58,9 +58,7 @@
         android:layout_height="wrap_content"
         android:text="Headline title"
         app:layout_constraintStart_toStartOf="@id/guideline_side_left"
-        app:layout_constraintTop_toBottomOf="@id/source"
-        app:layout_constraintWidth_max="wrap"
-        app:layout_constraintWidth_percent="0.6" />
+        app:layout_constraintTop_toBottomOf="@id/source" />
 
     <TextView
         android:id="@+id/description"
@@ -70,11 +68,15 @@
         app:layout_constraintStart_toStartOf="@id/guideline_side_left"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_description_end"
+    <TextView
+        android:id="@+id/published_at"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical" />
+        android:layout_height="wrap_content"
+        android:text="2023-02-26"
+        app:layout_constraintStart_toStartOf="@id/guideline_side_left"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom" />
+
+
 
     <ImageView
         android:id="@+id/thumbnail"

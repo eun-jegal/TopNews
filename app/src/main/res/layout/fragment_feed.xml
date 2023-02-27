@@ -38,7 +38,6 @@
             android:id="@+id/main_headline_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
             android:paddingHorizontal="6dp"
             app:layout_constraintBottom_toBottomOf="@id/main_headline_thumbnail"
             app:layout_constraintEnd_toEndOf="@id/guideline_side_right"

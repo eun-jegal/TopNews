@@ -9,38 +9,65 @@
         android:id="@+id/navigation_feed"
         android:name="com.example.topnews.ui.FeedFragment"
         android:label="@string/title_feed"
-        tools:layout="@layout/fragment_feed" >
+        tools:layout="@layout/fragment_feed">
         <action
             android:id="@+id/action_navigation_feed_to_navigation_browse"
             app:destination="@id/navigation_browse" />
         <action
             android:id="@+id/action_navigation_feed_to_navigation_saved"
             app:destination="@id/navigation_saved" />
+        <action
+            android:id="@+id/action_navigation_feed_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_browse"
         android:name="com.example.topnews.ui.BrowseFragment"
         android:label="@string/title_browse"
-        tools:layout="@layout/fragment_browse" >
+        tools:layout="@layout/fragment_browse">
         <action
             android:id="@+id/action_navigation_browse_to_navigation_feed"
             app:destination="@id/navigation_feed" />
         <action
             android:id="@+id/action_navigation_browse_to_navigation_saved"
             app:destination="@id/navigation_saved" />
+        <action
+            android:id="@+id/action_navigation_browse_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_saved"
         android:name="com.example.topnews.ui.SavedFragment"
         android:label="@string/title_saved"
-        tools:layout="@layout/fragment_saved" >
+        tools:layout="@layout/fragment_saved">
         <action
             android:id="@+id/action_navigation_saved_to_navigation_feed"
             app:destination="@id/navigation_feed" />
         <action
             android:id="@+id/action_navigation_saved_to_navigation_browse"
             app:destination="@id/navigation_browse" />
+        <action
+            android:id="@+id/action_navigation_saved_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.topnews.ui.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="selected_article"
+            app:argType="com.example.topnews.data.model.Article" />
+        <action
+            android:id="@+id/action_detailFragment_to_navigation_feed"
+            app:destination="@id/navigation_feed" />
+        <action
+            android:id="@+id/action_detailFragment_to_navigation_browse"
+            app:destination="@id/navigation_browse" />
+        <action
+            android:id="@+id/action_detailFragment_to_navigation_saved"
+            app:destination="@id/navigation_saved" />
     </fragment>
 </navigation>
