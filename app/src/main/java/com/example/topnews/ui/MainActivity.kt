@@ -37,17 +37,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navView: BottomNavigationView = binding.navView
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_feed, R.id.navigation_browse, R.id.navigation_saved
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        val navView: BottomNavigationView = binding.navView
         navView.setupWithNavController(navController)
 
         viewModel = ViewModelProvider(this, viewModelFactory)[NewsViewModel::class.java]
