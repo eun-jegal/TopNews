@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -31,7 +32,6 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDetailBinding.bind(view)
-        binding.toolbar.inflateMenu(R.menu.sub_toolbar_menu)
         viewModel = (activity as MainActivity).viewModel
 
         initActionbar()
@@ -41,18 +41,24 @@ class DetailFragment : Fragment() {
     private fun initActionbar() {
         val navController = findNavController()
         val appBarConfiguration = AppBarConfiguration(navController.graph)
-        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
-        binding.toolbar.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.action_share -> {
-                    Log.d("Eun", "action_share")
-                    true
+        binding.toolbar.apply {
+            setupWithNavController(navController, appBarConfiguration)
+            inflateMenu(R.menu.sub_toolbar_menu)
+            setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.action_share -> {
+                        Log.d("Eun", "action_share")
+                        true
+                    }
+                    R.id.action_save -> {
+                        val args: DetailFragmentArgs by navArgs()
+                        val article = args.selectedArticle
+                        viewModel.saveArticle(article)
+                        Toast.makeText(activity, "Saved the article!", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    else -> false
                 }
-                R.id.action_save -> {
-                    Log.d("Eun", "action_save")
-                    true
-                }
-                else -> false
             }
         }
     }

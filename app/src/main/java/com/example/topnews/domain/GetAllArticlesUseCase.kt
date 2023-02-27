@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 class GetAllArticlesUseCase(
     private val newsRepository: NewsRepository
 ) {
-    fun getAllArticles(): Flow<List<Article>> {
+    fun execute(): Flow<List<Article>> {
         return newsRepository.getAllArticles()
     }
 }

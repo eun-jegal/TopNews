@@ -6,7 +6,7 @@ import com.example.topnews.data.repository.NewsRepository
 class DeleteArticleUseCase(
     private val newsRepository: NewsRepository
 ) {
-    suspend fun deleteArticle(article: Article) {
+    suspend fun execute(article: Article) {
         newsRepository.deleteArticle(article)
     }
 }

@@ -2,7 +2,9 @@ package com.example.topnews.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
+import com.example.topnews.data.model.Article
 import com.example.topnews.data.model.News
 import com.example.topnews.data.util.NetworkResult
 import com.example.topnews.domain.*
@@ -40,6 +42,30 @@ class NewsViewModel constructor(
             headlinesByCategory.postValue(apiResult)
         } catch (e: Exception) {
             headlinesByCategory.postValue(NetworkResult.Error(e.message.toString()))
+        }
+    }
+
+    fun saveArticle(article: Article) {
+        viewModelScope.launch(Dispatchers.IO) {
+            saveArticleUseCase.execute(article)
+        }
+    }
+
+    fun getSavedArticles() = liveData {
+        getAllArticlesUseCase.execute().collect {
+            emit(it)
+        }
+    }
+
+    fun deleteArticle(article: Article) {
+        viewModelScope.launch(Dispatchers.IO) {
+            deleteArticleUseCase.execute(article)
+        }
+    }
+
+    fun deleteAllArticles() {
+        viewModelScope.launch(Dispatchers.IO) {
+            deleteAllArticlesUseCase.execute()
         }
     }
 }
