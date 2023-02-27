@@ -32,4 +32,14 @@ class NewsViewModel constructor(
             topHeadlines.postValue(NetworkResult.Error(e.message.toString()))
         }
     }
+
+    fun getHeadlinesByCategory(country: String, page: Int, category: String) = viewModelScope.launch(Dispatchers.IO) {
+        headlinesByCategory.postValue(NetworkResult.Loading())
+        try {
+            val apiResult = getHeadlinesByCategoryUseCase.execute(country, page, category)
+            headlinesByCategory.postValue(apiResult)
+        } catch (e: Exception) {
+            headlinesByCategory.postValue(NetworkResult.Error(e.message.toString()))
+        }
+    }
 }
