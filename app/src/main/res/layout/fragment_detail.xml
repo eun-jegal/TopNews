@@ -11,6 +11,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
+        app:menu="@menu/detail_fragment_toolbar_menu"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
     <WebView

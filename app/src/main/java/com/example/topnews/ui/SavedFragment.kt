@@ -1,9 +1,7 @@
 package com.example.topnews.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,6 +17,15 @@ class SavedFragment : Fragment() {
     private lateinit var binding: FragmentSavedBinding
     private lateinit var viewModel: NewsViewModel
     private lateinit var newsAdapter: NewsAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_toolbar_menu, menu)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

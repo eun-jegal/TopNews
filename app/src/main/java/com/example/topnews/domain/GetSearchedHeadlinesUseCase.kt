@@ -7,7 +7,7 @@ import com.example.topnews.data.util.NetworkResult
 class GetSearchedHeadlinesUseCase(
     private val newsRepository: NewsRepository
 ) {
-    suspend fun getSearchedHeadlines(
+    suspend fun execute(
         country: String,
         searchQuery: String,
         page: Int

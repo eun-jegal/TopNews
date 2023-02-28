@@ -2,9 +2,8 @@ package com.example.topnews.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -26,6 +25,20 @@ class FeedFragment : Fragment() {
     private lateinit var newsAdapter: NewsAdapter
     private val country = "us"
     private val page = 1
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_toolbar_menu, menu)
+        val searchItem = menu.findItem(R.id.action_search)
+        val searchView = searchItem?.actionView as SearchView
+        searchView.apply {
+            requestFocus()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

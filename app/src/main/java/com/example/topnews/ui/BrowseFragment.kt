@@ -2,9 +2,7 @@ package com.example.topnews.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -28,6 +26,15 @@ class BrowseFragment : Fragment() {
     private val page = 1
     private val categorySet = listOf("general", "business", "technology", "entertainment", "health", "sports", "science")
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_toolbar_menu, menu)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,7 +52,7 @@ class BrowseFragment : Fragment() {
 
         initRecyclerView()
         initTabLayout()
-        displayContentByCategory("General")
+//        displayContentByCategory("General")
     }
 
     private fun initRecyclerView() {
