@@ -6,32 +6,33 @@
 <!-- Screenshots -->
 <h2>Wireframes</h2>
 <p>
-  <img src="https://user-images.githubusercontent.com/57670625/221882120-0ad83366-af64-46ba-af60-3f94c4c4cd29.jpg"/>
+  TBD
 </p>
 
 <!-- Tech Stack -->
 <h2>Tech Stack</h2>
+<li>Minumum SDK Level: 21</li>
 <ul>
   <li>Architecture
     <ul>
-      <li>MVVM Pattern</li>
+      <li><a href="https://developer.android.com/topic/architecture">MVVM Pattern</a>: Industry-recognized software architecure pattern supported by Google</li>
     </ul>
   </li>
   <li>Jetpack Compose
   <ul>
-    <li>ViewModel</li>
-    <li>Lifecycle</li>
-    <li>Room</li>
-    <li>Navigation</li>
-    <li>Hilt</li>
+    <li>ViewModel: Exposes data streams as a state holder</li>
+    <li>Lifecycle: Observes Android lifecycles and handle operations to a change in the lifecycle status</li>
+    <li><a href="https://developer.android.com/training/data-storage/room">Room</a>: Data Object Mapping library providing an abstract layer over SQLite</li>
+    <li>Navigation: Supports implementing navigation through multiple fragments</li>
+    <li><a href="https://developer.android.com/training/dependency-injection/hilt-android">Hilt</a>: Dependency injection library built on top of Dagger benefit from the compile-time correctness, runtime performance, scalability, and Android Studio support </li>
    </ul>
   </li>
-  <li>Coroutines</li>
-  <li>Flow</li>
-  <li>Retrofit</li>
-  <li>OkHttp</li>
+  <li><a href="https://developer.android.com/kotlin/coroutines">Coroutines</a>: Concurrency design pattern provided by Kotlin</li>
+  <li><a href="https://developer.android.com/kotlin/flow">Flow</a>: Asynchronous data stream that sequentially emits values and completes normally or with an exception</li>
+  <li><a href="https://square.github.io/retrofit/">Retrofit</a>: Type-safe REST client for Android, Java and Kotlin developed by Square.  </li>
+  <li><a href="https://square.github.io/okhttp/">OkHttp</a> : 3rd party library sending and receive HTTP-based network requests built on top of the Okio library</li>
   <li>GSON</li>
-  <li>Glide</li>
+  <li><a href="https://github.com/bumptech/glide">Glide</a>: Fast and efficient open source media management and image loading framework </li>
 </ul>
 
 <!-- Architecture -->
@@ -50,21 +51,22 @@
 <p align="center">
    <img src="https://user-images.githubusercontent.com/57670625/221630274-a9214a21-5908-4725-b799-800197555750.jpg"/>
 </p>
+<p>Top News is composed with three different layers - UI layer, domain layer and data layer. Each layer has app components which have different responsibilities</p>
 <h3>Architecture Overview</h3>
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/57670625/221889263-31f9c589-b0b5-46b4-96ca-a0a94730bb39.jpg"/>
+   <img src="https://user-images.githubusercontent.com/57670625/221953743-a0aeb6ab-8bf9-45b0-bde9-59c0d3912899.jpg"/>
 </p>
 <p></p>
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/57670625/221889261-41416031-8851-4117-b9d3-dd6e21bd9e3f.jpg"/>
+   <img src="https://user-images.githubusercontent.com/57670625/221953741-1c9dd925-1dc3-47d7-a6c2-d50c2efd0fba.jpg"/>
 </p>
 <p></p>
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/57670625/221889262-254b15d1-b72f-49c8-b826-54d934b6f511.jpg"/>
+   <img src="https://user-images.githubusercontent.com/57670625/221953742-45a26049-c855-45e1-aba8-e69d2f166933.jpg"/>
 </p>
 <p></p>
 
 <!-- Open APIs -->
-<h2>Open APIs</h2>
-
+<h2>Open APIs</h2>!
+<p>Top News using the <a href="https://newsapi.org//">NewsAPI</a> for fetching JSON object from the server. News API provides articles and breaking news headlines from news sources and blogs across the web with JSON API.</p>
  
