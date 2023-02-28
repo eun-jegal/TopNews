@@ -20,9 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textStyle="bold"
+            android:text="TOP\nNEWS"
             android:textAlignment="center"
-            android:text="TOP\nNEWS" />
+            android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
@@ -60,28 +60,37 @@
 
             <TextView
                 android:id="@+id/main_headline_title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="6dp"
+                android:layout_marginBottom="16dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="test test"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/main_headline_thumbnail"
                 app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
                 app:layout_constraintStart_toStartOf="@id/guideline_side_left" />
 
             <TextView
                 android:id="@+id/textview_more_headlines"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="@string/more_headlines"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/recyclerview_headlines"
+                app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
                 app:layout_constraintStart_toStartOf="@id/guideline_side_left"
                 app:layout_constraintTop_toBottomOf="@id/main_headline_thumbnail" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_headlines"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:nestedScrollingEnabled="false"
                 app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
                 app:layout_constraintStart_toStartOf="@id/guideline_side_left"

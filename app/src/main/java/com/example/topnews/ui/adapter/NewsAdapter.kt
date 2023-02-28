@@ -50,9 +50,14 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
         fun bind(article: Article) {
             binding.apply {
-                title.text = article.title
-                description.text = article.description
-                source.text = article.source?.name
+                val title = article.title
+                title?.let {
+                    val dashIndex = it.lastIndexOf('-')
+                    val company = it.substring(dashIndex + 2, it.length)
+                    val title = it.substring(0, dashIndex - 1)
+                    this.title.text = title
+                    source.text = "${article.source?.name} · $company"
+                }
                 publishedAt.text = article.publishedAt
             }
             Glide.with(binding.thumbnail.context)

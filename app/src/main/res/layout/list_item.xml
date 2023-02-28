@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/list_item_border"
     android:layout_width="match_parent"
     android:layout_height="100dp">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_side_left"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.04"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_side_right"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.96"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_thumbnail_start"
@@ -46,36 +30,39 @@
 
     <TextView
         android:id="@+id/source"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Google News"
-        app:layout_constraintStart_toStartOf="@id/guideline_side_left"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_thumbnail_start"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="Headline title"
-        app:layout_constraintStart_toStartOf="@id/guideline_side_left"
-        app:layout_constraintTop_toBottomOf="@id/source" />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Headline description"
-        app:layout_constraintStart_toStartOf="@id/guideline_side_left"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/guideline_thumbnail_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/source"
+        app:layout_constraintBottom_toTopOf="@id/published_at"/>
 
     <TextView
         android:id="@+id/published_at"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="2023-02-26"
-        app:layout_constraintStart_toStartOf="@id/guideline_side_left"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom" />
-
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toStartOf="@id/guideline_thumbnail_start"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <ImageView
@@ -83,7 +70,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
-        app:layout_constraintEnd_toStartOf="@id/guideline_side_right"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="@id/guideline_thumbnail_start"
         app:layout_constraintTop_toTopOf="@id/guideline_top" />
 
