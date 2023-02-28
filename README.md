@@ -4,8 +4,10 @@
 </p>
 
 <!-- Screenshots -->
-<h2>Screenshot</h2>
-<p>TBD</p>
+<h2>Wireframes</h2>
+<p>
+  <img src="https://user-images.githubusercontent.com/57670625/221882120-0ad83366-af64-46ba-af60-3f94c4c4cd29.jpg"/>
+</p>
 
 <!-- Tech Stack -->
 <h2>Tech Stack</h2>
@@ -49,9 +51,20 @@
    <img src="https://user-images.githubusercontent.com/57670625/221630274-a9214a21-5908-4725-b799-800197555750.jpg"/>
 </p>
 <h3>Architecture Overview</h3>
-<p>TBD</p>
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/57670625/221889263-31f9c589-b0b5-46b4-96ca-a0a94730bb39.jpg"/>
+</p>
+<p></p>
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/57670625/221889261-41416031-8851-4117-b9d3-dd6e21bd9e3f.jpg"/>
+</p>
+<p></p>
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/57670625/221889262-254b15d1-b72f-49c8-b826-54d934b6f511.jpg"/>
+</p>
+<p></p>
 
-<!-- License -->
+<!-- Open APIs -->
 <h2>Open APIs</h2>
 
  
