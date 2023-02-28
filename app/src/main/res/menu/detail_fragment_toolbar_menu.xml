@@ -5,7 +5,8 @@
         android:id="@+id/action_share"
         android:icon="@drawable/ic_baseline_share_24"
         android:title="Share"
-        app:showAsAction="always"/>
+        app:actionProviderClass="android.widget.ShareActionProvider"
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_save"
         android:icon="@drawable/ic_baseline_favorite_border_24"

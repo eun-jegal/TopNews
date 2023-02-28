@@ -1,16 +1,13 @@
 package com.example.topnews.ui
 
 import android.os.Bundle
-import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.topnews.R
 import com.example.topnews.databinding.ActivityMainBinding
@@ -37,15 +34,25 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initToolbar()
+        initNavigationController()
+
+        viewModel = ViewModelProvider(this, viewModelFactory)[NewsViewModel::class.java]
+        newsAdapter = NewsAdapter()
+    }
+
+    private fun initToolbar() {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+    }
+
+    private fun initNavigationController() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
 
         val navView: BottomNavigationView = binding.navView
         navView.setupWithNavController(navController)
-
-        viewModel = ViewModelProvider(this, viewModelFactory)[NewsViewModel::class.java]
-        newsAdapter = NewsAdapter()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -56,5 +63,24 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_toolbar_menu, menu)
+
+        val searchItem = menu?.findItem(R.id.action_search)
+        val searchView = searchItem?.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+        return super.onCreateOptionsMenu(menu)
     }
 }

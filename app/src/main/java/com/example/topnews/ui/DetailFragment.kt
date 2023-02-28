@@ -11,10 +11,8 @@ import androidx.navigation.fragment.navArgs
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.example.topnews.R
-import com.example.topnews.data.model.News
 import com.example.topnews.databinding.FragmentDetailBinding
 import com.example.topnews.ui.viewmodel.NewsViewModel
-import com.google.android.material.snackbar.Snackbar
 
 class DetailFragment : Fragment() {
 
@@ -43,7 +41,7 @@ class DetailFragment : Fragment() {
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         binding.toolbar.apply {
             setupWithNavController(navController, appBarConfiguration)
-            inflateMenu(R.menu.sub_toolbar_menu)
+            inflateMenu(R.menu.detail_fragment_toolbar_menu)
             setOnMenuItemClickListener {
                 when (it.itemId) {
                     R.id.action_share -> {

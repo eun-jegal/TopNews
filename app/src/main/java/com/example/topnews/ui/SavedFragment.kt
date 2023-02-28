@@ -5,9 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -46,7 +43,7 @@ class SavedFragment : Fragment() {
 
     private fun initActionBar() {
         binding.toolbar.apply {
-            inflateMenu(R.menu.saved_fragement_toolbar_menu)
+            inflateMenu(R.menu.saved_fragment_toolbar_menu)
             setOnMenuItemClickListener {
                 when (it.itemId) {
                     R.id.action_delete_all -> {
