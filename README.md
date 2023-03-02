@@ -2,6 +2,7 @@
 <p>News app displaying daily top headlines and headlines by 7 different categories 
   (general, business, techonology, entertainment, health, sports, science) built with MVVM pattern using Retrofit, Hilt and Room
 </p>
+<br>
 
 <!-- Screenshots -->
 <h2>Screenshots</h2>
@@ -15,6 +16,8 @@
   <img src="https://user-images.githubusercontent.com/57670625/221976096-d1464ff6-a8ce-4064-b4a4-6fe152cfa368.png" width="23%"/>
 </p>
 <p><i>* Currently, News API returns a "null" value for a thumbnail image request</i></p>
+<br>
+
 <!-- Tech Stack -->
 <h2>Tech Stack</h2>
 <li>Minumum SDK Level: 21</li>
@@ -40,6 +43,7 @@
   <li>GSON</li>
   <li><a href="https://github.com/bumptech/glide">Glide</a>: Fast and efficient open source media management and image loading framework </li>
 </ul>
+<br>
 
 <!-- Architecture -->
 <h2>Architecture</h2>
@@ -88,6 +92,7 @@
   <li>NewsRepository is a single source of truth and requests data from NewsLocalDataSource and NewsRemoteDataSource.</li>
   <li>NewsLocalDataSource is a class managing the database built with Room library and NewsRemoteDataSource is a class requesting network response to NewsAPI server.</li>
 </ul>
+<br>
 
 <!-- Open APIs -->
 <h2>Open APIs</h2>
