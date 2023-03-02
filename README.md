@@ -6,13 +6,13 @@
 <!-- Screenshots -->
 <h2>Screenshots</h2>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/57670625/221976098-d27c2654-6a8f-479c-8dac-8a0772f15b04.png" width="20%"/>
-  &nbsp; &nbsp; &nbsp; &nbsp;                                                                                                                           
-  <img src="https://user-images.githubusercontent.com/57670625/221976095-c83ebafa-14a7-49ed-991e-4fa8356c4997.png" width="20%"/>
-  &nbsp; &nbsp; &nbsp; &nbsp;
-  <img src="https://user-images.githubusercontent.com/57670625/221976094-928dc4a0-8c9a-4878-a8e7-983ba5a57ea3.png" width="20%"/>
-  &nbsp; &nbsp; &nbsp; &nbsp;
-  <img src="https://user-images.githubusercontent.com/57670625/221976096-d1464ff6-a8ce-4064-b4a4-6fe152cfa368.png" width="20%"/>
+  <img src="https://user-images.githubusercontent.com/57670625/221976098-d27c2654-6a8f-479c-8dac-8a0772f15b04.png" width="23%"/>
+  &nbsp; &nbsp;                                                                                                                     
+  <img src="https://user-images.githubusercontent.com/57670625/221976095-c83ebafa-14a7-49ed-991e-4fa8356c4997.png" width="23%"/>
+  &nbsp; &nbsp;
+  <img src="https://user-images.githubusercontent.com/57670625/221976094-928dc4a0-8c9a-4878-a8e7-983ba5a57ea3.png" width="23%"/>
+  &nbsp; &nbsp;
+  <img src="https://user-images.githubusercontent.com/57670625/221976096-d1464ff6-a8ce-4064-b4a4-6fe152cfa368.png" width="23%"/>
 </p>
 <p><i>* Currently, News API returns a "null" value for a thumbnail image request</i></p>
 <!-- Tech Stack -->
