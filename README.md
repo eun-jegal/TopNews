@@ -13,7 +13,7 @@
   &nbsp; &nbsp;
   <img src="https://user-images.githubusercontent.com/57670625/221976094-928dc4a0-8c9a-4878-a8e7-983ba5a57ea3.png" width="23%"/>
   &nbsp; &nbsp;
-  <img src="https://user-images.githubusercontent.com/57670625/221976096-d1464ff6-a8ce-4064-b4a4-6fe152cfa368.png" width="23%"/>
+  <img src="https://user-images.githubusercontent.com/57670625/222872184-4cb391f8-8bef-40be-9b72-0f755896fbb9.png" width="23%"/>
 </p>
 <p><i>* Currently, News API returns a "null" value for a thumbnail image request</i></p>
 <br>
