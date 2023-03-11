@@ -15,13 +15,8 @@
         app:showAsAction="always">
         <menu>
             <item
-                android:icon="@drawable/ic_baseline_favorite_border_24"
-                android:title="Saved"
-                />
-            <item
                 android:icon="@drawable/ic_baseline_settings_24"
-                android:title="Settings"
-                />
+                android:title="Settings" />
         </menu>
     </item>
 </menu>

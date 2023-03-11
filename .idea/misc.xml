@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_delete_outline_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_dynamic_feed_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_explore_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/item_list_border.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/list_item_border.xml" value="0.1605" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2383177570093458" />

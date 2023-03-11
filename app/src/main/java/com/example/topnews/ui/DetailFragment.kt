@@ -1,5 +1,6 @@
 package com.example.topnews.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -37,20 +38,32 @@ class DetailFragment : Fragment() {
     }
 
     private fun initActionbar() {
-        val navController = findNavController()
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
         binding.toolbar.apply {
-            setupWithNavController(navController, appBarConfiguration)
-            inflateMenu(R.menu.detail_fragment_toolbar_menu)
+            setNavigationIcon(R.drawable.ic_baseline_arrow_back_24)
+            setNavigationOnClickListener {
+                findNavController().popBackStack()
+            }
+            val args: DetailFragmentArgs by navArgs()
+            val article = args.selectedArticle
+            article.title?.let {
+                val dashIndex = it.lastIndexOf('-')
+                val company = it.substring(dashIndex + 2, it.length)
+                binding.toolbarSource.text = company
+                binding.toolbarUrl.text = article.url
+            }
+
             setOnMenuItemClickListener {
                 when (it.itemId) {
                     R.id.action_share -> {
-                        Log.d("Eun", "action_share")
+                        val share = Intent.createChooser(Intent().apply {
+                            action = Intent.ACTION_SEND
+                            putExtra(Intent.EXTRA_TEXT, article.url)
+                            flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                        }, null)
+                        startActivity(share)
                         true
                     }
                     R.id.action_save -> {
-                        val args: DetailFragmentArgs by navArgs()
-                        val article = args.selectedArticle
                         viewModel.saveArticle(article)
                         Toast.makeText(activity, "Saved the article!", Toast.LENGTH_SHORT).show()
                         true

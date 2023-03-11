@@ -1,86 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.FeedFragment">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_side_left"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.04"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_side_right"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.96"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:id="@+id/main_headline_thumbnail"
-            android:layout_width="0dp"
-            android:layout_height="450dp"
-            app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
-            app:layout_constraintStart_toStartOf="@id/guideline_side_left"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/main_toolbar_menu">
 
         <TextView
-            android:id="@+id/main_headline_title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:ellipsize="end"
-            android:maxLines="3"
-            android:text="test test"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/main_headline_thumbnail"
-            app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
-            app:layout_constraintStart_toStartOf="@id/guideline_side_left" />
-
-        <TextView
-            android:id="@+id/textview_more_headlines"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/more_headlines"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/recyclerview_headlines"
-            app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
-            app:layout_constraintStart_toStartOf="@id/guideline_side_left"
-            app:layout_constraintTop_toBottomOf="@id/main_headline_thumbnail" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_headlines"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:nestedScrollingEnabled="false"
-            app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
-            app:layout_constraintStart_toStartOf="@id/guideline_side_left"
-            app:layout_constraintTop_toBottomOf="@id/textview_more_headlines" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
+            android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="center"
+            android:fontFamily="@font/rockwell"
+            android:text="TOP\nNEWS"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.FeedFragment">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_side_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_side_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/main_headline_thumbnail"
+                android:layout_width="0dp"
+                android:layout_height="450dp"
+                app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
+                app:layout_constraintStart_toStartOf="@id/guideline_side_left"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/main_headline_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="test test"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/main_headline_thumbnail"
+                app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
+                app:layout_constraintStart_toStartOf="@id/guideline_side_left" />
+
+            <TextView
+                android:id="@+id/textview_more_headlines"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/more_headlines"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/recyclerview_headlines"
+                app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
+                app:layout_constraintStart_toStartOf="@id/guideline_side_left"
+                app:layout_constraintTop_toBottomOf="@id/main_headline_thumbnail" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_headlines"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="@id/guideline_side_right"
+                app:layout_constraintStart_toStartOf="@id/guideline_side_left"
+                app:layout_constraintTop_toBottomOf="@id/textview_more_headlines" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

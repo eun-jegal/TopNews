@@ -33,17 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        initToolbar()
         initNavigationController()
 
         viewModel = ViewModelProvider(this, viewModelFactory)[NewsViewModel::class.java]
         newsAdapter = NewsAdapter()
-    }
-
-    private fun initToolbar() {
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
     }
 
     private fun initNavigationController() {

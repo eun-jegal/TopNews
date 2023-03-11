@@ -26,15 +26,6 @@ class BrowseFragment : Fragment() {
     private val page = 1
     private val categorySet = listOf("general", "business", "technology", "entertainment", "health", "sports", "science")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_toolbar_menu, menu)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,6 +40,15 @@ class BrowseFragment : Fragment() {
         binding = FragmentBrowseBinding.bind(view)
         viewModel = (activity as MainActivity).viewModel
         newsAdapter = (activity as MainActivity).newsAdapter
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("selected_article", it)
+            }
+            findNavController().navigate(
+                R.id.action_navigation_browse_to_detailFragment,
+                bundle
+            )
+        }
 
         initRecyclerView()
         initTabLayout()

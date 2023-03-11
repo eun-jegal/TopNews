@@ -3,6 +3,7 @@ package com.example.topnews.ui
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,15 +19,6 @@ class SavedFragment : Fragment() {
     private lateinit var viewModel: NewsViewModel
     private lateinit var newsAdapter: NewsAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_toolbar_menu, menu)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,6 +33,15 @@ class SavedFragment : Fragment() {
         binding = FragmentSavedBinding.bind(view)
         viewModel = (activity as MainActivity).viewModel
         newsAdapter = (activity as MainActivity).newsAdapter
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("selected_article", it)
+            }
+            findNavController().navigate(
+                R.id.action_navigation_saved_to_detailFragment,
+                bundle
+            )
+        }
 
         initActionBar()
         initRecyclerView()
@@ -50,7 +51,6 @@ class SavedFragment : Fragment() {
 
     private fun initActionBar() {
         binding.toolbar.apply {
-            inflateMenu(R.menu.saved_fragment_toolbar_menu)
             setOnMenuItemClickListener {
                 when (it.itemId) {
                     R.id.action_delete_all -> {

@@ -26,20 +26,6 @@ class FeedFragment : Fragment() {
     private val country = "us"
     private val page = 1
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_toolbar_menu, menu)
-        val searchItem = menu.findItem(R.id.action_search)
-        val searchView = searchItem?.actionView as SearchView
-        searchView.apply {
-            requestFocus()
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -64,7 +50,7 @@ class FeedFragment : Fragment() {
             )
         }
         initRecyclerView()
-        displayContent()
+//        displayContent()
     }
 
     private fun initRecyclerView() {
@@ -96,6 +82,7 @@ class FeedFragment : Fragment() {
                 is NetworkResult.Loading -> {
                     showProgressBar()
                 }
+                else -> {}
             }
         }
     }
