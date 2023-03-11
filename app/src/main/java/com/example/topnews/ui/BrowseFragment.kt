@@ -52,7 +52,7 @@ class BrowseFragment : Fragment() {
 
         initRecyclerView()
         initTabLayout()
-//        displayContentByCategory("General")
+        displayContentByCategory("General")
     }
 
     private fun initRecyclerView() {

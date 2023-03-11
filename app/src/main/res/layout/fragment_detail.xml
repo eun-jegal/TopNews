@@ -23,8 +23,7 @@
                 android:id="@+id/toolbar_source"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="The Washington Post"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <TextView
@@ -33,8 +32,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="https://www.washingtonpost.com"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 

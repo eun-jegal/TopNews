@@ -50,7 +50,7 @@ class FeedFragment : Fragment() {
             )
         }
         initRecyclerView()
-//        displayContent()
+        displayContent()
     }
 
     private fun initRecyclerView() {
@@ -98,6 +98,7 @@ class FeedFragment : Fragment() {
     private fun displayMainThumbnail(article: Article) {
         Glide.with(binding.mainHeadlineThumbnail.context)
             .load(article.urlToImage)
+            .fitCenter()
             .into(binding.mainHeadlineThumbnail)
         binding.mainHeadlineTitle.text = article.title
     }

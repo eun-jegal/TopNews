@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/list_item_border"
     android:layout_width="match_parent"
-    android:layout_height="110dp">
+    android:layout_height="100dp"
+    android:background="@drawable/list_item_border">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_title_end"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.675"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_thumbnail_start"
@@ -18,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="12dp" />
+        app:layout_constraintGuide_begin="8dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_bottom"
@@ -26,16 +34,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintGuide_end="12dp" />
+        app:layout_constraintGuide_end="8dp" />
 
     <TextView
         android:id="@+id/source"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:text="Google News"
-        android:textColor="@color/text_color_secondary"
+        android:textColor="@color/text_color_source"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@id/guideline_thumbnail_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_title_end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
@@ -43,27 +53,30 @@
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Headline title"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
-        android:textColor="@color/text_color_primary"
-        android:maxLines="2"
         android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Headline title"
+        android:textColor="@color/text_color_primary"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/guideline_thumbnail_start"
+        app:layout_constraintBottom_toTopOf="@id/published_at"
+        app:layout_constraintEnd_toEndOf="@id/guideline_title_end"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/source"
-        app:layout_constraintBottom_toTopOf="@id/published_at"/>
+        app:layout_constraintTop_toBottomOf="@id/source" />
 
     <TextView
         android:id="@+id/published_at"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:text="2023-02-26"
+        android:textColor="@color/text_color_secondary"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
-        app:layout_constraintEnd_toStartOf="@id/guideline_thumbnail_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_title_end"
         app:layout_constraintStart_toStartOf="parent" />
 
 
@@ -72,8 +85,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideline_thumbnail_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_thumbnail_start"
         app:layout_constraintTop_toTopOf="@id/guideline_top" />
 
 

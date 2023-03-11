@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.topnews.data.model.Article
 import com.example.topnews.databinding.ListItemBinding
+import java.text.SimpleDateFormat
 
 class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
@@ -56,12 +57,14 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
                     val company = it.substring(dashIndex + 2, it.length)
                     val title = it.substring(0, dashIndex - 1)
                     this.title.text = title
-                    source.text = "${article.source?.name} · $company"
+                    source.text = company
                 }
+
                 publishedAt.text = article.publishedAt
             }
             Glide.with(binding.thumbnail.context)
                 .load(article.urlToImage)
+                .centerCrop()
                 .into(binding.thumbnail)
 
             binding.root.setOnClickListener {
