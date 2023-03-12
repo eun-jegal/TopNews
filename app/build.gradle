@@ -7,6 +7,10 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
+def localPropertiesFile = rootProject.file("local.properties")
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(localPropertiesFile))
+
 android {
     compileSdk 32
 
@@ -18,12 +22,20 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", localProperties['BASE_URL'])
+        buildConfigField("String", "API_KEY", localProperties['API_KEY'])
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
         }
     }
     compileOptions {
@@ -84,9 +96,9 @@ dependencies {
     // Optional -- mockito-kotlin
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.1.0"
     // Optional -- Mockk framework
-    testImplementation "io.mockk:mockk:1.13.4."
+    testImplementation "io.mockk:mockk:1.9.3"
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    androidTestImplementation "org.mockito:mockito-android:2.24.5."
+    androidTestImplementation "org.mockito:mockito-core:5.0.0"
 }

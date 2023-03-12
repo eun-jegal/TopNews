@@ -26,10 +26,4 @@
             </intent-filter>
         </activity>
     </application>
-    <meta-data
-        android:name = "api_key"
-        android:value = "${API_KEY}"/>
-    <meta-data
-        android:name = "base_url"
-        android:value = "${BASE_URL}"/>
 </manifest>
