@@ -2,8 +2,6 @@ package com.example.topnews.domain
 
 import com.example.topnews.data.repository.NewsRepository
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
-
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
