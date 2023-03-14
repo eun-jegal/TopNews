@@ -1,13 +1,12 @@
 package com.example.topnews.ui
 
 import android.os.Bundle
-import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.topnews.R
 import com.example.topnews.data.model.Article
@@ -24,7 +23,6 @@ class BrowseFragment : Fragment() {
     private lateinit var newsAdapter: NewsAdapter
     private val country = "us"
     private val page = 1
-    private val categorySet = listOf("general", "business", "technology", "entertainment", "health", "sports", "science")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -65,8 +63,9 @@ class BrowseFragment : Fragment() {
     private fun initTabLayout() {
         binding.categoryTabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                val tabPosition = tab?.position
-                displayContentByCategory(categorySet[tabPosition!!])
+                tab?.position?.let {
+                    displayContentByCategory(viewModel.categoryList[it])
+                }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -84,6 +83,7 @@ class BrowseFragment : Fragment() {
             when (response) {
                 is NetworkResult.Success -> {
                     hideProgressBar()
+                    hideErrorMessage()
                     response.data?.let {
                         val articleList = it.articles
                         displayRecyclerView(articleList)
@@ -92,10 +92,11 @@ class BrowseFragment : Fragment() {
                 is NetworkResult.Error -> {
                     hideProgressBar()
                     response.message?.let {
-                        Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show()
+                        showErrorMessage(it)
                     }
                 }
                 is NetworkResult.Loading -> {
+                    hideErrorMessage()
                     showProgressBar()
                 }
             }
@@ -108,6 +109,17 @@ class BrowseFragment : Fragment() {
 
     private fun hideProgressBar() {
         binding.progressBar.visibility = View.GONE
+    }
+
+    private fun showErrorMessage(message: String) {
+        binding.textErrorMessage.apply {
+            visibility = View.VISIBLE
+            text = message
+        }
+    }
+
+    private fun hideErrorMessage() {
+        binding.textErrorMessage.visibility = View.GONE
     }
 
     private fun displayRecyclerView(list: List<Article>) {

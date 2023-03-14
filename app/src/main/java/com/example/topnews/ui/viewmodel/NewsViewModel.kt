@@ -24,6 +24,7 @@ class NewsViewModel constructor(
     val topHeadlines: MutableLiveData<NetworkResult<News>> = MutableLiveData()
     val headlinesByCategory: MutableLiveData<NetworkResult<News>> = MutableLiveData()
     val searchedHeadlines: MutableLiveData<NetworkResult<News>> = MutableLiveData()
+    val categoryList = listOf("general", "business", "technology", "entertainment", "health", "sports", "science")
 
     fun getTopHeadlines(country: String, page: Int) = viewModelScope.launch(Dispatchers.IO) {
         topHeadlines.postValue(NetworkResult.Loading())

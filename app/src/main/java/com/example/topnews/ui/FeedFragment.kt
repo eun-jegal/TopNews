@@ -1,14 +1,12 @@
 package com.example.topnews.ui
 
 import android.os.Bundle
-import android.util.Log
-import android.view.*
-import android.widget.SearchView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.topnews.R
@@ -55,6 +53,7 @@ class FeedFragment : Fragment() {
 
     private fun initRecyclerView() {
         binding.recyclerviewHeadlines.apply {
+            isNestedScrollingEnabled = false
             adapter = newsAdapter
             layoutManager = LinearLayoutManager(activity)
         }
@@ -66,9 +65,9 @@ class FeedFragment : Fragment() {
             when (response) {
                 is NetworkResult.Success -> {
                     hideProgressBar()
+                    hideErrorMessage()
                     response.data?.let {
                         val articleList = it.articles
-                        Log.d("Eun", "size: " + articleList.size)
                         displayMainThumbnail(articleList[0])
                         displayRecyclerView(articleList.subList(1, articleList.size - 1))
                     }
@@ -76,13 +75,13 @@ class FeedFragment : Fragment() {
                 is NetworkResult.Error -> {
                     hideProgressBar()
                     response.message?.let {
-                        Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show()
+                        showErrorMessage(it)
                     }
                 }
                 is NetworkResult.Loading -> {
+                    hideErrorMessage()
                     showProgressBar()
                 }
-                else -> {}
             }
         }
     }
@@ -93,6 +92,17 @@ class FeedFragment : Fragment() {
 
     private fun hideProgressBar() {
         binding.progressBar.visibility = View.GONE
+    }
+
+    private fun showErrorMessage(message: String) {
+        binding.textErrorMessage.apply {
+            visibility = View.VISIBLE
+            text = message
+        }
+    }
+
+    private fun hideErrorMessage() {
+        binding.textErrorMessage.visibility = View.GONE
     }
 
     private fun displayMainThumbnail(article: Article) {
