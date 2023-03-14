@@ -65,9 +65,9 @@ class NewsRepositoryImplTest {
 
     @Test
     fun getAllArticles() {
-//        Mockito.`when`(localDataSource.getAllArticles()).thenReturn(flow { emit(TestUtil.testArticleList) })
-//        val articlesFromDB = newsRepository.getAllArticles().collec
-//        assertTrue(articlesFromDB.size == TestUtil.testArticleList.size)
+        Mockito.`when`(newsRepository.getAllArticles()).thenReturn(TestUtil.testArticleList)
+        val articlesFromDB = newsRepository.getAllArticles()
+        assertTrue(articlesFromDB.size == TestUtil.testArticleList.size)
     }
 
     @Test

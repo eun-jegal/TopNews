@@ -20,8 +20,7 @@ class GetAllArticlesUseCaseTest {
 
     @Test
     fun test_use_case_execution() = runBlocking {
-        useCase.execute().collect() {
-            assertTrue(it.isNotEmpty())
-        }
+        val articles = useCase.execute()
+        assertTrue(articles.size == TestUtil.testArticleList.size)
     }
 }
