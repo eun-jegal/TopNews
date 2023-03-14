@@ -1,7 +1,11 @@
 package com.example.topnews.domain
 
 import com.example.topnews.data.model.Article
+import com.example.topnews.data.model.News
 import com.example.topnews.data.model.Source
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.ResponseBody.Companion.toResponseBody
+import retrofit2.Response
 
 object TestUtil {
     val testArticle = Article(
@@ -44,5 +48,19 @@ object TestUtil {
         testArticle,
         testArticle2,
         testArticle3
+    )
+
+    val successResponse: Response<News> = Response.success(
+        News(
+            articles = testArticleList,
+            status = "ok",
+            totalResults = 20
+        )
+    )
+
+    val errorResponse: Response<News> = Response.error(
+        404,
+        "{\"key\":[\"somestuff\"]}"
+            .toResponseBody("application/json".toMediaTypeOrNull())
     )
 }
