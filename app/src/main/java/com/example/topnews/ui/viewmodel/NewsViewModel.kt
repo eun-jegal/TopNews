@@ -65,9 +65,8 @@ class NewsViewModel constructor(
     }
 
     fun getSavedArticles() = liveData {
-        getAllArticlesUseCase.execute().collect {
-            emit(it)
-        }
+        val articlesFromDB = getAllArticlesUseCase.execute()
+        emit(articlesFromDB)
     }
 
     fun deleteArticle(article: Article) {

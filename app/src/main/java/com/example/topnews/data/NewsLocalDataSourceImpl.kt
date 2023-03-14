@@ -2,7 +2,6 @@ package com.example.topnews.data
 
 import com.example.topnews.data.db.ArticleDAO
 import com.example.topnews.data.model.Article
-import kotlinx.coroutines.flow.Flow
 
 class NewsLocalDataSourceImpl(
     private val articleDAO: ArticleDAO
@@ -15,7 +14,7 @@ class NewsLocalDataSourceImpl(
         articleDAO.delete(article)
     }
 
-    override fun getAllArticles(): Flow<List<Article>> {
+    override fun getAllArticles(): List<Article> {
         return articleDAO.getAllArticles()
     }
 

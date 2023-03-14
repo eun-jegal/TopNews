@@ -5,7 +5,6 @@ import com.example.topnews.data.NewsRemoteDataSource
 import com.example.topnews.data.model.Article
 import com.example.topnews.data.model.News
 import com.example.topnews.data.util.NetworkResult
-import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 
 class NewsRepositoryImpl(
@@ -52,7 +51,7 @@ class NewsRepositoryImpl(
         newsLocalDataSource.deleteArticle(article)
     }
 
-    override fun getAllArticles(): Flow<List<Article>> {
+    override fun getAllArticles(): List<Article> {
         return newsLocalDataSource.getAllArticles()
     }
 

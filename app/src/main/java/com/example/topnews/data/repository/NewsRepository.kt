@@ -3,7 +3,6 @@ package com.example.topnews.data.repository
 import com.example.topnews.data.model.Article
 import com.example.topnews.data.model.News
 import com.example.topnews.data.util.NetworkResult
-import kotlinx.coroutines.flow.Flow
 
 interface NewsRepository {
     suspend fun getTopHeadlines(country: String, page: Int): NetworkResult<News>
@@ -24,7 +23,7 @@ interface NewsRepository {
 
     suspend fun deleteArticle(article: Article)
 
-    fun getAllArticles(): Flow<List<Article>>
+    fun getAllArticles(): List<Article>
 
     fun deleteAllArticles()
 }
