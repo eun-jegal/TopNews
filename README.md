@@ -37,7 +37,6 @@
   </ul>
 </li>
 <li><a href="https://developer.android.com/kotlin/coroutines">Coroutines</a>: Concurrency design pattern provided by Kotlin</li>
-<li><a href="https://developer.android.com/kotlin/flow">Flow</a>: Asynchronous data stream that sequentially emits values and completes normally or with an exception</li>
 <li><a href="https://square.github.io/retrofit/">Retrofit</a>: Type-safe REST client for Android, Java and Kotlin developed by Square.  </li>
 <li><a href="https://square.github.io/okhttp/">OkHttp</a> : 3rd party library sending and receive HTTP-based network requests built on top of the Okio library</li>
 <li><a href="https://github.com/google/gson">GSON</a>: Java library that can be used to convert Java Objects into their JSON representation</li>
