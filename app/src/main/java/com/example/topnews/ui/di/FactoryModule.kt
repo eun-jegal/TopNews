@@ -1,8 +1,7 @@
 package com.example.topnews.ui.di
 
-import com.example.topnews.domain.*
+import com.example.topnews.data.repository.NewsRepository
 import com.example.topnews.ui.viewmodel.NewsViewModelFactory
-import com.google.gson.annotations.SerializedName
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,23 +14,7 @@ class FactoryModule {
 
     @Singleton
     @Provides
-    fun provideViewModelFactory(
-        getTopHeadlinesUseCase: GetTopHeadlinesUseCase,
-        getHeadlinesByCategoryUseCase: GetHeadlinesByCategoryUseCase,
-        getSearchedHeadlinesUseCase: GetSearchedHeadlinesUseCase,
-        saveArticleUseCase: SaveArticleUseCase,
-        deleteArticleUseCase: DeleteArticleUseCase,
-        getAllArticlesUseCase: GetAllArticlesUseCase,
-        deleteAllArticlesUseCase: DeleteAllArticlesUseCase
-    ): NewsViewModelFactory {
-        return NewsViewModelFactory(
-            getTopHeadlinesUseCase,
-            getHeadlinesByCategoryUseCase,
-            getSearchedHeadlinesUseCase,
-            saveArticleUseCase,
-            deleteArticleUseCase,
-            getAllArticlesUseCase,
-            deleteAllArticlesUseCase
-        )
+    fun provideViewModelFactory(newsRepository: NewsRepository): NewsViewModelFactory {
+        return NewsViewModelFactory(newsRepository)
     }
 }

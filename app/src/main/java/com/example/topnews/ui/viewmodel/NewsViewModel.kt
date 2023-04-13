@@ -6,20 +6,14 @@ import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import com.example.topnews.data.model.Article
 import com.example.topnews.data.model.News
+import com.example.topnews.data.repository.NewsRepository
 import com.example.topnews.data.util.NetworkResult
-import com.example.topnews.domain.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class NewsViewModel constructor(
-    private val getTopHeadlinesUseCase: GetTopHeadlinesUseCase,
-    private val getHeadlinesByCategoryUseCase: GetHeadlinesByCategoryUseCase,
-    private val getSearchedHeadlinesUseCase: GetSearchedHeadlinesUseCase,
-    private val saveArticleUseCase: SaveArticleUseCase,
-    private val deleteArticleUseCase: DeleteArticleUseCase,
-    private val getAllArticlesUseCase: GetAllArticlesUseCase,
-    private val deleteAllArticlesUseCase: DeleteAllArticlesUseCase
-) : ViewModel() {
+    private val newsRepository: NewsRepository
+    ) : ViewModel() {
 
     val topHeadlines: MutableLiveData<NetworkResult<News>> = MutableLiveData()
     val headlinesByCategory: MutableLiveData<NetworkResult<News>> = MutableLiveData()
@@ -29,7 +23,7 @@ class NewsViewModel constructor(
     fun getTopHeadlines(country: String, page: Int) = viewModelScope.launch(Dispatchers.IO) {
         topHeadlines.postValue(NetworkResult.Loading())
         try {
-            val apiResult = getTopHeadlinesUseCase.execute(country, page)
+            val apiResult = newsRepository.getTopHeadlines(country, page)
             topHeadlines.postValue(apiResult)
         } catch (e: Exception) {
             topHeadlines.postValue(NetworkResult.Error(e.message.toString()))
@@ -40,7 +34,7 @@ class NewsViewModel constructor(
         viewModelScope.launch(Dispatchers.IO) {
             headlinesByCategory.postValue(NetworkResult.Loading())
             try {
-                val apiResult = getHeadlinesByCategoryUseCase.execute(country, page, category)
+                val apiResult = newsRepository.getHeadlinesByCategory(country, page, category)
                 headlinesByCategory.postValue(apiResult)
             } catch (e: Exception) {
                 headlinesByCategory.postValue(NetworkResult.Error(e.message.toString()))
@@ -51,7 +45,7 @@ class NewsViewModel constructor(
         viewModelScope.launch(Dispatchers.IO) {
             searchedHeadlines.postValue(NetworkResult.Loading())
             try {
-                val apiResult = getSearchedHeadlinesUseCase.execute(country, searchQuery, page)
+                val apiResult = newsRepository.getSearchedTopHeadlines(country, searchQuery, page)
                 searchedHeadlines.postValue(apiResult)
             } catch (e: Exception) {
                 searchedHeadlines.postValue(NetworkResult.Error(e.message.toString()))
@@ -60,24 +54,24 @@ class NewsViewModel constructor(
 
     fun saveArticle(article: Article) {
         viewModelScope.launch(Dispatchers.IO) {
-            saveArticleUseCase.execute(article)
+            newsRepository.saveArticle(article)
         }
     }
 
     fun getSavedArticles() = liveData {
-        val articlesFromDB = getAllArticlesUseCase.execute()
+        val articlesFromDB = newsRepository.getAllArticles()
         emit(articlesFromDB)
     }
 
     fun deleteArticle(article: Article) {
         viewModelScope.launch(Dispatchers.IO) {
-            deleteArticleUseCase.execute(article)
+            newsRepository.deleteArticle(article)
         }
     }
 
     fun deleteAllArticles() {
         viewModelScope.launch(Dispatchers.IO) {
-            deleteAllArticlesUseCase.execute()
+            newsRepository.deleteAllArticles()
         }
     }
 }

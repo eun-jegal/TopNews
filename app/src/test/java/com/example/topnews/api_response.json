@@ -1,0 +1,266 @@
+{
+  "status": "ok",
+  "totalResults": 35,
+  "articles": [
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Nathaniel Meyersohn",
+      "title": "Camp toy store pleads for help after Silicon Valley Bank collapse - CNN",
+      "description": "A toy company based in New York has gotten caught up in the collapse of Silicon Valley Bank and is pleading with customers for help keeping it afloat.",
+      "url": "https://www.cnn.com/2023/03/10/business/camp-toy-store-svb-bank/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/230310161851-camp-store-file-restricted.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2023-03-11T16:21:00Z",
+      "content": "A toy company based in New York has gotten caught up in the collapse of Silicon Valley Bank and is pleading with customers for help keeping it afloat.\r\nCamp, a venture-backed retailer, sent an email … [+1685 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNBC"
+      },
+      "author": "Ashley Capoot",
+      "title": "Stablecoin USDC breaks dollar peg after firm reveals it has $3.3 billion in SVB exposure - CNBC",
+      "description": "The U.S. cryptocurrency firm Circle's USD Coin lost its dollar peg and fell to a record low Saturday morning.",
+      "url": "https://www.cnbc.com/2023/03/11/stablecoin-usdc-breaks-dollar-peg-after-firm-reveals-it-has-3point3-billion-in-svb-exposure.html",
+      "urlToImage": "https://image.cnbcfm.com/api/v1/image/107206819-16784757442023-03-10t191422z_1686168732_rc27rz91f51e_rtrmadp_0_global-markets-banks.jpeg?v=1678550603&w=1920&h=1080",
+      "publishedAt": "2023-03-11T16:03:23Z",
+      "content": "The U.S. cryptocurrency firm Circle's USD Coin lost its dollar peg and fell to a record low Saturday morning after the company revealed it has nearly 8% of its $40 billion in reserves tied up at the … [+1586 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Hollywood Reporter"
+      },
+      "author": "Pamela McClintock",
+      "title": "Box Office: ‘Scream VI’ Scares Off ‘Creed III,’ ’65 ‘ With Series-Best Opening - Hollywood Reporter",
+      "description": "The sixth installment in the slasher franchise is on course to top the weekend box office chart with $43.5 million or more domestically as of Saturday morning.",
+      "url": "https://www.hollywoodreporter.com/movies/movie-news/scream-vi-box-office-65-1235348571/",
+      "urlToImage": "https://www.hollywoodreporter.com/wp-content/uploads/2023/03/MCDSCRE_PA111-copy.jpg?w=1024",
+      "publishedAt": "2023-03-11T15:23:47Z",
+      "content": "Scream VIis scaring up a series-best opening of $43.5 million from 3,675 theaters at the domestic box office after starting off Friday with roughly $19.3 million, including $5.7 million in Thursday p… [+2933 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CBS Sports"
+      },
+      "author": "",
+      "title": "Bears' trade down from top pick serves dual purpose of helping Justin Fields and preparing for life after him - CBS Sports",
+      "description": "Building around Fields allows Bears to get better, but also determines if he is their franchise QB",
+      "url": "https://www.cbssports.com/nfl/news/bears-trade-down-from-top-pick-serves-dual-purpose-of-helping-justin-fields-and-preparing-for-life-after-him/",
+      "urlToImage": "https://sportshub.cbsistatic.com/i/r/2023/01/04/aad36937-7a6e-4c9e-8d95-8d47776f3738/thumbnail/1200x675/4a9f360097b728237e1287447fc50b1b/justin-fields-4-1400-us.jpg",
+      "publishedAt": "2023-03-11T15:22:00Z",
+      "content": "The offseason began in earnest on Friday night, when the Chicago Bearstraded the No. 1 overall pick to the Carolina Panthers. Chicago received a massive haul to move down eight spots to the No. 9 sel… [+3497 chars]"
+    },
+    {
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch"
+      },
+      "author": "Sarah Perez",
+      "title": "Roku, Roblox and others disclose their exposure to SVB in SEC filings - TechCrunch",
+      "description": "The fallout from the collapse of Silicon Valley Bank is impacting a range of startups and larger firms including, as we know now from SEC filings, publicly traded companies like Roku, Roblox, Quotient, and others. Roku said in a filing that it had around $487…",
+      "url": "https://techcrunch.com/2023/03/11/roku-roblox-and-others-disclose-their-exposure-to-svb-in-sec-filings/",
+      "urlToImage": "https://techcrunch.com/wp-content/uploads/2022/07/1563833464896.jpg?w=800",
+      "publishedAt": "2023-03-11T15:03:55Z",
+      "content": "The fallout from the collapse of Silicon Valley Bank is impacting a range of startups and larger firms including, as we know now from SEC filings, publicly traded companies like Roku, Roblox, Quotien… [+3479 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CBS Sports"
+      },
+      "author": "",
+      "title": "Bracketology Bubble Watch: Vanderbilt, Utah State fighting for their NCAA Tournament lives in Saturday games - CBS Sports",
+      "description": "The Bruins have a legitimate shot to finish on the top line of the bracket when it is revealed on Selection Sunday",
+      "url": "https://www.cbssports.com/college-basketball/news/bracketology-how-ucla-could-end-up-as-a-no-1-seed-bubble-watch-winding-down-with-two-teams-still-playing/",
+      "urlToImage": "https://sportshub.cbsistatic.com/i/r/2023/03/11/2c6e0eb2-3c90-441b-ae4e-eaa5d7dec821/thumbnail/1200x675/8ec21442290eab44ea965a289622f1f2/bracketology-ucla.jpg",
+      "publishedAt": "2023-03-11T14:27:00Z",
+      "content": "It is the penultimate day of the season, and we have just one day until Selection Sunday. Here are some of the things I am keeping an eye on during Saturday's busy slate.  \r\nThe battle for the final … [+2458 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Ben Church",
+      "title": "Mikaela Shiffrin breaks all-time skiing record with 87th World Cup win - CNN",
+      "description": "Mikaela Shiffrin won her 87th World Cup race on Saturday to break the overall record set by skiing legend Ingemar Stenmark.",
+      "url": "https://www.cnn.com/2023/03/11/sport/mikaela-shiffrin-record-breaker-world-cup-spt-intl/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/230311073752-01-mikaela-shiffrin-alpine-world-cup-0311.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2023-03-11T14:25:00Z",
+      "content": "Mikaela Shiffrin won her 87th World Cup race on Saturday to break the overall record set by skiing legend Ingemar Stenmark.\r\nThe American triumphed in the slalom in Åre, Sweden, to become the sports … [+1691 chars]"
+    },
+    {
+      "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+      },
+      "author": "John Flesher",
+      "title": "Aches, rashes and fear: Trauma remains after Ohio derailment - The Associated Press - en Español",
+      "description": "EAST PALESTINE, Ohio (AP) — Heather Bable speaks rapidly, recalling the terror of the night when a train loaded with hazardous chemicals derailed  less than a half-mile from her home in East Palestine, Ohio.",
+      "url": "https://apnews.com/article/ohio-train-derailment-contamination-fears-brockovich-fc68b402096a4f5f8598a657f7e399f8",
+      "urlToImage": "https://storage.googleapis.com/afs-prod/media/bda03693a57f45d9a2bbfb2cf39b6f8e/3000.webp",
+      "publishedAt": "2023-03-11T14:19:21Z",
+      "content": "EAST PALESTINE, Ohio (AP) Heather Bable speaks rapidly, recalling the terror of the night when a train loaded with hazardous chemicals derailed less than a half-mile from her home in East Palestine, … [+9343 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Eonline.com"
+      },
+      "author": "Tierney Bricker",
+      "title": "A Look at All the Celeb Couples Who Had to Work Together After Breaking Up - E! NEWS",
+      "description": "Outer Banks stars Chase Stokes and Madelyn Cline filmed season three of their Netflix series after ending their relationship. But they aren't the first famous exes to continue working together.",
+      "url": "https://www.eonline.com/news/1367158/a-look-at-all-the-celeb-couples-who-had-to-work-together-after-breaking-up",
+      "urlToImage": "https://akns-images.eonline.com/eol_images/Entire_Site/202303/rs_1200x1200-230103095132-1200-outer-banks.cm.13233.jpg?fit=around%7C1080:1080&output-quality=90&crop=1080:1080;center,top",
+      "publishedAt": "2023-03-11T14:00:00Z",
+      "content": "The Big Bang co-star's relationship early in the CBS sitcom's 12-season run was a big secret on set, with just a few colleagues knowing about their two-year romance at the time. \r\n\"All the scenes up … [+954 chars]"
+    },
+    {
+      "source": {
+        "id": "fox-news",
+        "name": "Fox News"
+      },
+      "author": "Thomas Catenacci",
+      "title": "Biden expected to approve enormous oil drilling project in blow to climate activists: 'Complete betrayal' - Fox News",
+      "description": "President Biden is reportedly green-lighting a massive oil drilling project that climate activists have dubbed a \"carbon bomb\" and lawmakers have cheered for its economic benefits.",
+      "url": "https://www.foxnews.com/politics/biden-expected-approve-enormous-oil-drilling-project-blow-climate-activists-complete-betrayal",
+      "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2020/09/joe-biden-oil-field-2.jpg",
+      "publishedAt": "2023-03-11T13:38:00Z",
+      "content": "The Biden administration is expected to soon push ahead with a massive northern Alaska oil drilling project that is forecasted to create thousands of jobs and 600 million barrels of oil over its 30-y… [+6273 chars]"
+    },
+    {
+      "source": {
+        "id": "cbs-news",
+        "name": "CBS News"
+      },
+      "author": null,
+      "title": "3 Texas women sued for wrongful death after man alleges they helped his ex-wife obtain medication for an abortion - CBS News",
+      "description": "Abortion rights groups condemned the lawsuit, and are calling it an intimidation tactic.",
+      "url": "https://www.cbsnews.com/news/3-texas-women-sued-for-wrongful-death-after-man-alleges-they-helped-his-ex-wife-obtain-medication-for-an-abortion/",
+      "urlToImage": "https://assets3.cbsnewsstatic.com/hub/i/r/2015/05/13/bf6e199b-2032-43e6-bdc3-4f41d1ab9c49/thumbnail/1200x630/a9ab1d5a479498b703f9e2d42cb95136/160065683.jpg",
+      "publishedAt": "2023-03-11T13:02:22Z",
+      "content": "Three women in Texas are being sued for wrongful death by a man who claims they helped his now-ex-wife obtain medication for an abortion. It's another test of state-enforced bans since the U.S. Supre… [+2136 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "National Post"
+      },
+      "author": "Chris Knight",
+      "title": "What time is it on the moon? One small step for lunar time - msnNOW",
+      "description": "The European Space Agency wants to create a unified system of timekeeping on the moon.",
+      "url": "https://nationalpost.com/news/world/lunar-time-moon-timekeeping",
+      "urlToImage": "https://smartcdn.gprod.postmedia.digital/nationalpost/wp-content/uploads/2023/03/buzz.jpg",
+      "publishedAt": "2023-03-11T13:00:51Z",
+      "content": "The European Space Agency wants to create a unified system of timekeeping on the moon \r\n Get the latest from Chris Knight straight to your inbox Sign Up\r\nBuzz Aldrin, on the flight of Apollo 11 to th… [+8650 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Jessie Gretener, Jorge Engels, Issy Ronald",
+      "title": "BBC's flagship soccer show faces boycott over Gary Lineker impartiality row - CNN",
+      "description": "The BBC is facing a boycott of its flagship soccer show \"Match of the Day,\" as well as other soccer coverage, following its announcement that presenter Gary Lineker would \"step back\" from the program, after he became embroiled in an impartiality row when he c…",
+      "url": "https://www.cnn.com/2023/03/11/football/gary-lineker-bbc-impartiality-row-boycott-spt-intl/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/230311044742-01-gary-lineker-london-030923-restricted.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2023-03-11T12:59:00Z",
+      "content": "The BBC is facing a boycott of its flagship soccer show Match of the Day, as well as other soccer coverage, following its announcement that presenter Gary Lineker would step back from the program, af… [+4663 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CoinDesk"
+      },
+      "author": "Shaurya Malwa",
+      "title": "Bitcoin Regains $20K After $200M in Crypto Liquidations; Some Traders Brush Off USDC Fears - CoinDesk",
+      "description": "Some traders are signalling strength for USD Coin, citing its treasury backing in U.S.-issued bonds.",
+      "url": "https://www.coindesk.com/markets/2023/03/11/bitcoin-regains-20k-after-200m-in-crypto-liquidations-some-traders-brush-off-usdc-fears/",
+      "urlToImage": "https://www.coindesk.com/resizer/QFC6Euss15VSgX-kijrZRGV-aCE=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/VTT7AVF2HZHDLKVPL5DNGROYUU.jpg",
+      "publishedAt": "2023-03-11T12:43:00Z",
+      "content": "Bitcoin and ether rose as much as 4% in the past 24 hours after a steep fall on Friday as contagion risks from the collapse of Silicon Valley Bank spread to crypto markets, specifically the exposure … [+2287 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Chron.com"
+      },
+      "author": "Ariana Garcia",
+      "title": "Gigantic asteroid could strike Earth in 2026, NASA says - Chron",
+      "description": "A newly discovered asteroid could slam into Earth on Valentine's Day in 23 years, according to NASA.",
+      "url": "https://www.chron.com/news/space/article/nasa-asteroid-earth-17831490.php",
+      "urlToImage": "https://s.hdnux.com/photos/01/31/66/54/23554833/3/rawImage.jpg",
+      "publishedAt": "2023-03-11T12:30:59Z",
+      "content": "NASA says a 160-foot-wide asteroid could potentially slam into Earth on Feb. 14, 2046. \r\nScience Photo Library - ANDRZEJ /Getty Images\r\nA newly discovered asteroid is prepared to ruin Valentine's Day… [+2531 chars]"
+    },
+    {
+      "source": {
+        "id": "the-washington-post",
+        "name": "The Washington Post"
+      },
+      "author": "Erin Blakemore",
+      "title": "Early menstruation could mean higher heart health risks, research says - The Washington Post",
+      "description": "Using genetic data from over 100,000 women worldwide, researchers determined that a variety of reproductive factors were associated with higher risk for atrial fibrillation, coronary artery disease, heart failure and stroke.",
+      "url": "https://www.washingtonpost.com/health/2023/03/11/period-childbirth-heart-health/",
+      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/3UR2I5DS3TEZV2QPYUE247D4VQ.jpg&w=1440",
+      "publishedAt": "2023-03-11T12:05:28Z",
+      "content": "Comment on this story\r\nWhen did you get your first period?\r\nThe question is common in gynecologists offices, but research suggests cardiologists should be asking it, too.\r\nIn a study published last m… [+2170 chars]"
+    },
+    {
+      "source": {
+        "id": "ars-technica",
+        "name": "Ars Technica"
+      },
+      "author": "Benj Edwards",
+      "title": "Apple, Atari, and Commodore, oh my! Explore a deluxe home vintage computer den - Ars Technica",
+      "description": "Brian Green re-lives the 1980s with dozens of fully operational vintage PCs at home.",
+      "url": "https://arstechnica.com/gadgets/2023/03/apple-atari-and-commodore-oh-my-explore-a-deluxe-home-vintage-computer-den/",
+      "urlToImage": "https://cdn.arstechnica.net/wp-content/uploads/2023/03/home_computer_lab_hero_2-760x380.jpg",
+      "publishedAt": "2023-03-11T12:00:00Z",
+      "content": "Enlarge/ A view of Brian Green's home computer lab, full of vintage treasures.\r\n19 with \r\nIn a world where millions of people carry a 1990s-grade supercomputer in their pockets, it's fun to revisit t… [+4929 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": "KARL RITTER",
+      "title": "UK: Russian advance in Bakhmut could come with heavy losses - Yahoo News",
+      "description": "Russian forces have made progress in their campaign to capture the city of Bakhmut in eastern Ukraine, the focus of the war's longest ground battle, but...",
+      "url": "https://news.yahoo.com/uk-russian-advance-bakhmut-could-115856523.html",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/GRjt6g8OfiiIPARm7p7BVA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://media.zenfs.com/en/ap.org/7475d87d3835ca97ecbd213afaf56a23",
+      "publishedAt": "2023-03-11T11:58:56Z",
+      "content": "KYIV, Ukraine (AP) Russian forces have made progress in their campaign to capture the city of Bakhmut in eastern Ukraine, the focus of the war's longest ground battle, but their assault will be diffi… [+4525 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "MLB.com"
+      },
+      "author": "Will Leitch",
+      "title": "What to watch for in all 8 World Baseball Classic games Saturday - MLB.com",
+      "description": "Because of the time zone issues that come with hosting an event in multiple hemispheres, the World Baseball Classic, so far, has had a staggered schedule. Pools A and B, in Taichung and Tokyo, respectively, have already had each of its teams play at least two…",
+      "url": "https://www.mlb.com/news/full-day-of-world-baseball-classic-pool-play-games",
+      "urlToImage": "https://img.mlbstatic.com/mlb-images/image/upload/t_2x1/t_w1536/mlb/htytyhqfyuoutnouetcr.jpg",
+      "publishedAt": "2023-03-11T10:59:16Z",
+      "content": "Because of the time zone issues that come with hosting an event in multiple hemispheres, the World Baseball Classic, so far, has had a staggered schedule. Pools A and B, in Taichung and Tokyo, respec… [+5934 chars]"
+    },
+    {
+      "source": {
+        "id": "usa-today",
+        "name": "USA Today"
+      },
+      "author": "Rachel Looker",
+      "title": "This week in politics: Joe Biden budget, Mitch McConnell hospitalized - USA TODAY",
+      "description": "President Joe Biden released his budget proposal this week that includes new taxes on wealthy Americans and a federal deficit reduction.",
+      "url": "https://www.usatoday.com/story/news/politics/2023/03/11/this-week-politics-biden-budget-proposal-mcconnell/11442932002/",
+      "urlToImage": "https://www.gannett-cdn.com/presto/2023/03/09/USAT/2aa271aa-26ec-4758-bb15-37d210a184bd-AP_Biden_Budget.jpg?crop=5941,3342,x0,y301&width=3200&height=1801&format=pjpg&auto=webp",
+      "publishedAt": "2023-03-11T10:00:19Z",
+      "content": "This week President Joe Biden released his budget proposal that now marks the start of a clash with Republicans over the federal budget.\r\nHis proposal includes new taxes on wealthy Americans, a feder… [+5729 chars]"
+    }
+  ]
+}
