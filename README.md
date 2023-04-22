@@ -45,8 +45,8 @@
 
 <!-- Architecture -->
 <h2>Architecture</h2>
-<p>Top News app was built with Google's recommended modern app architecture - MVVM pattern. By separating multiple app components into three layers
-- UI, Domain and Data, the app is scalable, maintainable and testable.</p>
+<p>Top News app was built with Google's recommended modern app architecture - MVVM pattern. By separating multiple app components into two main layers
+- UI and Data, the app is scalable, maintainable and testable.</p>
 <ul>
   <li>Architectural Principles</li>
     <ul>
@@ -57,7 +57,7 @@
    </ul>
 </ul>
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/57670625/224512399-9515be20-a3e7-462a-9a8e-120c3511adab.jpg"/>
+   <img src="https://user-images.githubusercontent.com/57670625/233807375-753576de-7e67-4c87-87d3-680a5fb9d821.jpg"/>
 </p>
 
 <h3>Architecture Overview</h3>
@@ -65,7 +65,7 @@
 
 <h3>UI Layer</h3>
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/57670625/222527163-ff9135ae-428a-4306-a10e-37b76066cbc9.jpg"/>
+   <img src="https://user-images.githubusercontent.com/57670625/233807373-7456312c-af7c-424c-a361-325c3e750919.jpg" width="85%"/>
 </p>
 <p>UI layer displays the application data and serves as the primary point for user interactions. Whenever the app data changes, the UI should update to reflect changes made by either user interaction or external input.</p>
 <ul>
@@ -73,16 +73,11 @@
   <li>NewsViewModel holds state and plays as a bridge between UI elements and the data layer</li>
   <li>UI elements request actions to ViewModel and observer ViewModel's livedatas to automatically update screens</li>
 </ul>
-
-<h3>Domain Layer</h3>
-<p align="center">
-   <img src="https://user-images.githubusercontent.com/57670625/222527239-0513a887-4d69-408d-9e51-87093c4f8aaa.jpg"/>
-</p>
-<p>Domain layer is optional layer for the modern architectural pattern. However, when the app is a large scale app and has complex functionalities, the domain layer helps to avoid code duplications and improves readability of codes. Top News has seven main use cases and these classes fit between ViewModel and the data layer(Repository).</p>
+<br>
 
 <h3>Data Layer</h3>
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/57670625/222527292-cd2b4364-a622-4354-bb46-cbd46a9ebcf8.jpg"/>
+   <img src="https://user-images.githubusercontent.com/57670625/233807461-88d0510e-3da2-4dfc-b763-bc23b8d11fa2.jpg" width="85%"/>
 </p>
 <p>Data layer is reponsible for containing application data and business logics. The data layer is consisted of repositories and data sources. It is important to keep each repository as a single source of truth.</p>
 <ul>
