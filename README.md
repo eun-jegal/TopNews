@@ -5,7 +5,6 @@
 <br>
 
 <!-- Screenshots -->
-<h2>Screenshots</h2>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/57670625/224512417-104f7d7f-d93a-491a-a6c3-09a0144466de.png" width="23%"/>
   &nbsp;                                                                                                                
