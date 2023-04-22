@@ -1,5 +1,5 @@
 <h1>Top News</h1>
-<p>News app displaying daily top headlines and headlines by 7 different categories 
+<p>🗞 News app displaying daily top headlines and headlines by 7 different categories 
   (general, business, techonology, entertainment, health, sports, science) built with MVVM pattern using Retrofit, Hilt and Room
 </p>
 <br>
