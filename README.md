@@ -88,5 +88,6 @@
 
 <!-- Open APIs -->
 <h2>Open APIs</h2>
+<img src="https://user-images.githubusercontent.com/57670625/235321985-6091159e-d5f8-4838-8c9b-59e114334e37.png" align="right" width="21%"/>
 <p>Top News using the <a href="https://newsapi.org//">NewsAPI</a> for fetching JSON object from the server. News API provides articles and breaking news headlines from news sources and blogs across the web with JSON API.</p>
- 
+
