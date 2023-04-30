@@ -8,9 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.topnews.data.model.Article
 import com.example.topnews.databinding.ListItemBinding
-import java.text.SimpleDateFormat
 
-class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     private var onItemClickListener: ((Article) -> Unit)? = null
 

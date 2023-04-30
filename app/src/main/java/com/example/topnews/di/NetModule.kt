@@ -1,4 +1,4 @@
-package com.example.topnews.ui.di
+package com.example.topnews.di
 
 import com.example.topnews.BuildConfig
 import com.example.topnews.data.api.NewsAPIService

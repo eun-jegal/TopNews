@@ -1,4 +1,4 @@
-package com.example.topnews.ui.di
+package com.example.topnews.di
 
 import com.example.topnews.data.repository.NewsRepository
 import com.example.topnews.ui.viewmodel.NewsViewModelFactory

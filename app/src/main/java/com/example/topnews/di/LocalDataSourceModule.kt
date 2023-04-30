@@ -1,4 +1,4 @@
-package com.example.topnews.ui.di
+package com.example.topnews.di
 
 import com.example.topnews.data.NewsLocalDataSource
 import com.example.topnews.data.NewsLocalDataSourceImpl
