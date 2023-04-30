@@ -1,7 +1,7 @@
-package com.example.topnews.ui
+package com.example.topnews
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class App : Application()
+class TopNewsApp : Application()

@@ -53,9 +53,8 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
                 val title = article.title
                 title?.let {
                     val dashIndex = it.lastIndexOf('-')
+                    this.title.text = it.substring(0, dashIndex - 1)
                     val company = it.substring(dashIndex + 2, it.length)
-                    val title = it.substring(0, dashIndex - 1)
-                    this.title.text = title
                     source.text = company
                 }
 
