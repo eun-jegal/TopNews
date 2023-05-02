@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.topnews.data.model.Article
 import com.example.topnews.data.model.News
 import com.example.topnews.data.repository.NewsRepository
-import com.example.topnews.data.util.NetworkResult
+import com.example.topnews.data.other.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -15,40 +15,40 @@ class NewsViewModel constructor(
     private val newsRepository: NewsRepository
     ) : ViewModel() {
 
-    val topHeadlines: MutableLiveData<NetworkResult<News>> = MutableLiveData()
-    val headlinesByCategory: MutableLiveData<NetworkResult<News>> = MutableLiveData()
-    val searchedHeadlines: MutableLiveData<NetworkResult<News>> = MutableLiveData()
+    val topHeadlines: MutableLiveData<Resource<News>> = MutableLiveData()
+    val headlinesByCategory: MutableLiveData<Resource<News>> = MutableLiveData()
+    val searchedHeadlines: MutableLiveData<Resource<News>> = MutableLiveData()
     val categoryList = listOf("general", "business", "technology", "entertainment", "health", "sports", "science")
 
     fun getTopHeadlines(country: String, page: Int) = viewModelScope.launch(Dispatchers.IO) {
-        topHeadlines.postValue(NetworkResult.Loading())
+        topHeadlines.postValue(Resource.Loading())
         try {
             val apiResult = newsRepository.getTopHeadlines(country, page)
             topHeadlines.postValue(apiResult)
         } catch (e: Exception) {
-            topHeadlines.postValue(NetworkResult.Error(e.message.toString()))
+            topHeadlines.postValue(Resource.Error(e.message.toString()))
         }
     }
 
     fun getHeadlinesByCategory(country: String, page: Int, category: String) =
         viewModelScope.launch(Dispatchers.IO) {
-            headlinesByCategory.postValue(NetworkResult.Loading())
+            headlinesByCategory.postValue(Resource.Loading())
             try {
                 val apiResult = newsRepository.getHeadlinesByCategory(country, page, category)
                 headlinesByCategory.postValue(apiResult)
             } catch (e: Exception) {
-                headlinesByCategory.postValue(NetworkResult.Error(e.message.toString()))
+                headlinesByCategory.postValue(Resource.Error(e.message.toString()))
             }
         }
 
     fun getSearchedHeadlines(country: String, searchQuery: String, page: Int) =
         viewModelScope.launch(Dispatchers.IO) {
-            searchedHeadlines.postValue(NetworkResult.Loading())
+            searchedHeadlines.postValue(Resource.Loading())
             try {
                 val apiResult = newsRepository.getSearchedTopHeadlines(country, searchQuery, page)
                 searchedHeadlines.postValue(apiResult)
             } catch (e: Exception) {
-                searchedHeadlines.postValue(NetworkResult.Error(e.message.toString()))
+                searchedHeadlines.postValue(Resource.Error(e.message.toString()))
             }
         }
 

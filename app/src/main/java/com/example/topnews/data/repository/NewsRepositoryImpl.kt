@@ -4,14 +4,14 @@ import com.example.topnews.data.NewsLocalDataSource
 import com.example.topnews.data.NewsRemoteDataSource
 import com.example.topnews.data.model.Article
 import com.example.topnews.data.model.News
-import com.example.topnews.data.util.NetworkResult
+import com.example.topnews.data.other.Resource
 import retrofit2.Response
 
 class NewsRepositoryImpl(
     private val newsLocalDataSource: NewsLocalDataSource,
     private val newsRemoteDataSource: NewsRemoteDataSource
 ) : NewsRepository {
-    override suspend fun getTopHeadlines(country: String, page: Int): NetworkResult<News> {
+    override suspend fun getTopHeadlines(country: String, page: Int): Resource<News> {
         return responseToResult(newsRemoteDataSource.getTopHeadlines(country, page))
     }
 
@@ -19,7 +19,7 @@ class NewsRepositoryImpl(
         country: String,
         page: Int,
         category: String
-    ): NetworkResult<News> {
+    ): Resource<News> {
         return responseToResult(
             newsRemoteDataSource.getHeadlinesByCategory(
                 country,
@@ -33,7 +33,7 @@ class NewsRepositoryImpl(
         country: String,
         searchQuery: String,
         page: Int
-    ): NetworkResult<News> {
+    ): Resource<News> {
         return responseToResult(
             newsRemoteDataSource.getSearchedHeadlines(
                 country,
@@ -59,12 +59,17 @@ class NewsRepositoryImpl(
         newsLocalDataSource.deleteAllArticles()
     }
 
-    private fun responseToResult(response: Response<News>): NetworkResult<News> {
-        if (response.isSuccessful) {
-            response.body()?.let { result ->
-                return NetworkResult.Success(result)
+    private fun responseToResult(response: Response<News>): Resource<News> {
+        return try {
+            if (response.isSuccessful) {
+                response.body()?.let { result ->
+                    Resource.Success(result)
+                } ?: Resource.Error("Something went wrong")
+            } else {
+                Resource.Error("Something went wrong")
             }
+        } catch (e: Exception) {
+            Resource.Error("Could not load data. Please check your internet connection!")
         }
-        return NetworkResult.Error(response.message())
     }
 }

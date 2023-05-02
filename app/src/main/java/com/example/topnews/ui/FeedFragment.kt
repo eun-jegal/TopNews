@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.topnews.R
 import com.example.topnews.data.model.Article
-import com.example.topnews.data.util.NetworkResult
+import com.example.topnews.data.other.Resource
 import com.example.topnews.databinding.FragmentFeedBinding
 import com.example.topnews.ui.adapter.NewsAdapter
 import com.example.topnews.ui.viewmodel.NewsViewModel
@@ -62,7 +62,7 @@ class FeedFragment : Fragment() {
         viewModel.getTopHeadlines(country, page)
         viewModel.topHeadlines.observe(viewLifecycleOwner) { response ->
             when (response) {
-                is NetworkResult.Success -> {
+                is Resource.Success -> {
                     hideProgressBar()
                     hideErrorMessage()
                     response.data?.let {
@@ -71,13 +71,13 @@ class FeedFragment : Fragment() {
                         displayRecyclerView(articleList.subList(1, articleList.size - 1))
                     }
                 }
-                is NetworkResult.Error -> {
+                is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let {
                         showErrorMessage(it)
                     }
                 }
-                is NetworkResult.Loading -> {
+                is Resource.Loading -> {
                     hideErrorMessage()
                     showProgressBar()
                 }

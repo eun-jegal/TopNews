@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.topnews.R
 import com.example.topnews.data.model.Article
-import com.example.topnews.data.util.NetworkResult
+import com.example.topnews.data.other.Resource
 import com.example.topnews.databinding.FragmentBrowseBinding
 import com.example.topnews.ui.adapter.NewsAdapter
 import com.example.topnews.ui.viewmodel.NewsViewModel
@@ -80,7 +80,7 @@ class BrowseFragment : Fragment() {
         viewModel.getHeadlinesByCategory(country, page, category)
         viewModel.headlinesByCategory.observe(viewLifecycleOwner) { response ->
             when (response) {
-                is NetworkResult.Success -> {
+                is Resource.Success -> {
                     hideProgressBar()
                     hideErrorMessage()
                     response.data?.let {
@@ -88,13 +88,13 @@ class BrowseFragment : Fragment() {
                         displayRecyclerView(articleList)
                     }
                 }
-                is NetworkResult.Error -> {
+                is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let {
                         showErrorMessage(it)
                     }
                 }
-                is NetworkResult.Loading -> {
+                is Resource.Loading -> {
                     hideErrorMessage()
                     showProgressBar()
                 }

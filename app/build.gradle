@@ -7,10 +7,6 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
-def localPropertiesFile = rootProject.file("local.properties")
-def localProperties = new Properties()
-localProperties.load(new FileInputStream(localPropertiesFile))
-
 android {
     compileSdk 32
 
@@ -23,8 +19,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "BASE_URL", localProperties['BASE_URL'])
-        buildConfigField("String", "API_KEY", localProperties['API_KEY'])
+        buildConfigField("String", "BASE_URL", BASE_URL)
+        buildConfigField("String", "API_KEY", API_KEY)
     }
 
     buildTypes {

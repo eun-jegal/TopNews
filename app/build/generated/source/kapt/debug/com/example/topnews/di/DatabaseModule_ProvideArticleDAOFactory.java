@@ -20,26 +20,25 @@ import javax.inject.Provider;
 public final class DatabaseModule_ProvideArticleDAOFactory implements Factory<ArticleDAO> {
   private final DatabaseModule module;
 
-  private final Provider<ArticleDatabase> articleDatabaseProvider;
+  private final Provider<ArticleDatabase> databaseProvider;
 
   public DatabaseModule_ProvideArticleDAOFactory(DatabaseModule module,
-      Provider<ArticleDatabase> articleDatabaseProvider) {
+      Provider<ArticleDatabase> databaseProvider) {
     this.module = module;
-    this.articleDatabaseProvider = articleDatabaseProvider;
+    this.databaseProvider = databaseProvider;
   }
 
   @Override
   public ArticleDAO get() {
-    return provideArticleDAO(module, articleDatabaseProvider.get());
+    return provideArticleDAO(module, databaseProvider.get());
   }
 
   public static DatabaseModule_ProvideArticleDAOFactory create(DatabaseModule module,
-      Provider<ArticleDatabase> articleDatabaseProvider) {
-    return new DatabaseModule_ProvideArticleDAOFactory(module, articleDatabaseProvider);
+      Provider<ArticleDatabase> databaseProvider) {
+    return new DatabaseModule_ProvideArticleDAOFactory(module, databaseProvider);
   }
 
-  public static ArticleDAO provideArticleDAO(DatabaseModule instance,
-      ArticleDatabase articleDatabase) {
-    return Preconditions.checkNotNullFromProvides(instance.provideArticleDAO(articleDatabase));
+  public static ArticleDAO provideArticleDAO(DatabaseModule instance, ArticleDatabase database) {
+    return Preconditions.checkNotNullFromProvides(instance.provideArticleDAO(database));
   }
 }
