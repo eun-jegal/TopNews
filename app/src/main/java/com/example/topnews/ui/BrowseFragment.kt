@@ -22,6 +22,8 @@ class BrowseFragment : Fragment() {
     private lateinit var newsAdapter: NewsAdapter
     private val country = "us"
     private val page = 1
+    private val categoryList =
+        listOf("general", "business", "technology", "entertainment", "health", "sports", "science")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,7 +65,7 @@ class BrowseFragment : Fragment() {
         binding.categoryTabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 tab?.position?.let {
-                    displayContentByCategory(viewModel.categoryList[it])
+                    displayContentByCategory(categoryList[it])
                 }
             }
 

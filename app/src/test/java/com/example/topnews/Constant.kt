@@ -1,4 +1,4 @@
-package com.example.topnews.data.repository
+package com.example.topnews
 
 import com.example.topnews.data.model.Article
 import com.example.topnews.data.model.News

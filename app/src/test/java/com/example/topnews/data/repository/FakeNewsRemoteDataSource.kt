@@ -2,6 +2,8 @@ package com.example.topnews.data.repository
 
 import com.example.topnews.data.NewsRemoteDataSource
 import com.example.topnews.data.model.News
+import com.example.topnews.errorResponse
+import com.example.topnews.successResponse
 import retrofit2.Response
 
 class FakeNewsRemoteDataSource: NewsRemoteDataSource {

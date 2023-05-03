@@ -1,5 +1,9 @@
 package com.example.topnews.data.repository
 
+import com.example.topnews.testArticle
+import com.example.topnews.testArticle2
+import com.example.topnews.testArticle3
+import com.example.topnews.testArticleList
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertTrue

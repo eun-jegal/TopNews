@@ -1,76 +1,69 @@
 package com.example.topnews.ui.viewmodel
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.topnews.data.model.Article
 import com.example.topnews.data.model.News
-import com.example.topnews.data.repository.NewsRepository
 import com.example.topnews.data.other.Resource
-import kotlinx.coroutines.Dispatchers
+import com.example.topnews.data.repository.NewsRepository
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class NewsViewModel constructor(
+class NewsViewModel @Inject constructor(
     private val newsRepository: NewsRepository
-    ) : ViewModel() {
+) : ViewModel() {
 
-    val topHeadlines: MutableLiveData<Resource<News>> = MutableLiveData()
-    val headlinesByCategory: MutableLiveData<Resource<News>> = MutableLiveData()
-    val searchedHeadlines: MutableLiveData<Resource<News>> = MutableLiveData()
-    val categoryList = listOf("general", "business", "technology", "entertainment", "health", "sports", "science")
+    private val _topHeadlines = MutableLiveData<Resource<News>>()
+    val topHeadlines: LiveData<Resource<News>> = _topHeadlines
 
-    fun getTopHeadlines(country: String, page: Int) = viewModelScope.launch(Dispatchers.IO) {
-        topHeadlines.postValue(Resource.Loading())
-        try {
-            val apiResult = newsRepository.getTopHeadlines(country, page)
-            topHeadlines.postValue(apiResult)
-        } catch (e: Exception) {
-            topHeadlines.postValue(Resource.Error(e.message.toString()))
+    private val _headlinesByCategory = MutableLiveData<Resource<News>>()
+    val headlinesByCategory: LiveData<Resource<News>> = _headlinesByCategory
+
+    private val _searchedHeadlines = MutableLiveData<Resource<News>>()
+    val searchedHeadlines: LiveData<Resource<News>> = _searchedHeadlines
+
+    fun getTopHeadlines(country: String, page: Int) {
+        _topHeadlines.postValue(Resource.Loading())
+        viewModelScope.launch {
+            val response = newsRepository.getTopHeadlines(country, page)
+            _topHeadlines.postValue(response)
         }
     }
 
-    fun getHeadlinesByCategory(country: String, page: Int, category: String) =
-        viewModelScope.launch(Dispatchers.IO) {
-            headlinesByCategory.postValue(Resource.Loading())
-            try {
-                val apiResult = newsRepository.getHeadlinesByCategory(country, page, category)
-                headlinesByCategory.postValue(apiResult)
-            } catch (e: Exception) {
-                headlinesByCategory.postValue(Resource.Error(e.message.toString()))
-            }
+    fun getHeadlinesByCategory(country: String, page: Int, category: String) {
+        _headlinesByCategory.postValue(Resource.Loading())
+        viewModelScope.launch {
+            val response = newsRepository.getHeadlinesByCategory(country, page, category)
+            _headlinesByCategory.postValue(response)
         }
+    }
 
-    fun getSearchedHeadlines(country: String, searchQuery: String, page: Int) =
-        viewModelScope.launch(Dispatchers.IO) {
-            searchedHeadlines.postValue(Resource.Loading())
-            try {
-                val apiResult = newsRepository.getSearchedTopHeadlines(country, searchQuery, page)
-                searchedHeadlines.postValue(apiResult)
-            } catch (e: Exception) {
-                searchedHeadlines.postValue(Resource.Error(e.message.toString()))
-            }
+    fun getSearchedHeadlines(country: String, searchQuery: String, page: Int) {
+        _searchedHeadlines.postValue(Resource.Loading())
+        viewModelScope.launch {
+            val response = newsRepository.getSearchedTopHeadlines(country, searchQuery, page)
+            _searchedHeadlines.postValue(response)
         }
+    }
+
 
     fun saveArticle(article: Article) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             newsRepository.saveArticle(article)
         }
     }
 
     fun getSavedArticles() = liveData {
-        val articlesFromDB = newsRepository.getAllArticles()
-        emit(articlesFromDB)
+        emit(newsRepository.getAllArticles())
     }
 
     fun deleteArticle(article: Article) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             newsRepository.deleteArticle(article)
         }
     }
 
     fun deleteAllArticles() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             newsRepository.deleteAllArticles()
         }
     }
