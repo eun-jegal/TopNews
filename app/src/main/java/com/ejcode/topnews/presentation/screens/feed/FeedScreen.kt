@@ -1,4 +1,4 @@
-package com.ejcode.topnews.presentation.screens
+package com.ejcode.topnews.presentation.screens.feed
 
 import androidx.compose.runtime.Composable
 

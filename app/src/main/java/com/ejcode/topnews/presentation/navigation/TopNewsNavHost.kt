@@ -16,17 +16,16 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavGraph.Companion.findStartDestination
-import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.ejcode.topnews.presentation.screens.BrowseScreen
-import com.ejcode.topnews.presentation.screens.DetailsScreen
-import com.ejcode.topnews.presentation.screens.FeedScreen
-import com.ejcode.topnews.presentation.screens.SavedScreen
+import com.ejcode.topnews.presentation.screens.browse.BrowseScreen
+import com.ejcode.topnews.presentation.screens.details.DetailsScreen
+import com.ejcode.topnews.presentation.screens.feed.FeedScreen
+import com.ejcode.topnews.presentation.screens.saved.SavedScreen
 
 const val ROUTE_FEED = "feed"
 const val ROUTE_DETAILS = "details"
