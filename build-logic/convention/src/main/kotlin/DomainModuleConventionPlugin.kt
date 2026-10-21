@@ -17,7 +17,8 @@ class DomainModuleConventionPlugin : Plugin<Project> {
         configureUnitTests()
 
         dependencies {
-            add("implementation", libs.library("kotlinx-coroutines-core"))
+            // api: domain contracts expose Flow, so consumers need coroutines on their classpath
+            add("api", libs.library("kotlinx-coroutines-core"))
             if (path != ":core:domain") {
                 add("api", project(":core:domain"))
             }
