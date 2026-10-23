@@ -26,4 +26,6 @@ android {
 
 dependencies {
     api(projects.core.domain)
+
+    testImplementation(testFixtures(projects.core.domain))
 }
