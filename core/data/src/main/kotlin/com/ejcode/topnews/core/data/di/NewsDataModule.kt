@@ -1,11 +1,13 @@
 package com.ejcode.topnews.core.data.di
 
+import com.ejcode.topnews.core.data.news.OfflineFirstNewsRepository
 import com.ejcode.topnews.core.data.news.RetrofitNewsDataSource
 import com.ejcode.topnews.core.data.news.RoomNewsDataSource
 import com.ejcode.topnews.core.data.news.remote.NewsApi
 import com.ejcode.topnews.core.data.saved.RoomSavedArticleDataSource
 import com.ejcode.topnews.core.domain.news.NewsLocalDataSource
 import com.ejcode.topnews.core.domain.news.NewsRemoteDataSource
+import com.ejcode.topnews.core.domain.news.NewsRepository
 import com.ejcode.topnews.core.domain.saved.SavedArticleLocalDataSource
 import dagger.Binds
 import dagger.Module
@@ -32,6 +34,10 @@ abstract class NewsDataModule {
     abstract fun bindSavedArticleLocalDataSource(
         impl: RoomSavedArticleDataSource
     ): SavedArticleLocalDataSource
+
+    @Binds
+    @Singleton
+    abstract fun bindNewsRepository(impl: OfflineFirstNewsRepository): NewsRepository
 
     companion object {
         @Provides

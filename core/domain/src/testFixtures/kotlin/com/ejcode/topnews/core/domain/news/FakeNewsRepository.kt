@@ -21,7 +21,7 @@ class FakeNewsRepository : NewsRepository {
     var remoteHeadlines: Map<NewsCategory?, List<Article>> = emptyMap()
 
     /** When set, every refresh fails with this error. */
-    var refreshError: DataError.Network? = null
+    var refreshError: DataError? = null
 
     val refreshedCategories = mutableListOf<NewsCategory?>()
 
@@ -32,7 +32,7 @@ class FakeNewsRepository : NewsRepository {
     override fun observeHeadlines(category: NewsCategory?): Flow<List<Article>> =
         cache.map { it[category].orEmpty() }
 
-    override suspend fun refreshHeadlines(category: NewsCategory?): EmptyResult<DataError.Network> {
+    override suspend fun refreshHeadlines(category: NewsCategory?): EmptyResult<DataError> {
         refreshedCategories += category
         refreshError?.let { return Result.Error(it) }
         remoteHeadlines[category]?.let { articles -> setCachedHeadlines(category, articles) }

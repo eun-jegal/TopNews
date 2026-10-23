@@ -14,6 +14,6 @@ import kotlinx.coroutines.flow.Flow
  */
 interface NewsRepository {
     fun observeHeadlines(category: NewsCategory?): Flow<List<Article>>
-    suspend fun refreshHeadlines(category: NewsCategory?): EmptyResult<DataError.Network>
+    suspend fun refreshHeadlines(category: NewsCategory?): EmptyResult<DataError>
     fun observeArticle(url: String): Flow<Article?>
 }
