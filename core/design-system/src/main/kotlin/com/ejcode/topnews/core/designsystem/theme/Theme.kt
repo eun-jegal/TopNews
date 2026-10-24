@@ -1,4 +1,4 @@
-package com.ejcode.topnews.ui.theme
+package com.ejcode.topnews.core.designsystem.theme
 
 import android.app.Activity
 import android.os.Build
